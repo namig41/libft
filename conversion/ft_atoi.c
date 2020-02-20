@@ -12,14 +12,6 @@
 
 #include "libft.h"
 
-static int			check_overflow(int sign)
-{
-	if (sign == -1)
-		return (0);
-	else
-		return (-1);
-}
-
 int					ft_atoi(const char *str)
 {
 	t_ll			max;
@@ -40,7 +32,7 @@ int					ft_atoi(const char *str)
 	{
 		max = max * 10 + (*str - '0');
 		if (max < prev || max >= 9223372036854775807)
-			return (check_overflow(sign));
+			return ((sign == -1) ? 0 : -1);
 		prev = max;
 		str++;
 	}

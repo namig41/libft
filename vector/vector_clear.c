@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   vector_clear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:03:50 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:03:52 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/07 16:12:19 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:32:32 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-int	ft_putchar(char c)
+int		vector_clear(t_vector *vector)
 {
-	return (write(1, &c, 1));
+	if (!vector)
+		return (VECTOR_ERROR);
+	ft_bzero(vector->data, vector_byte_size(vector));
+	return (VECTOR_SUCCESS);
 }

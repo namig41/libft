@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   vector_pop_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:05:17 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 18:37:39 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/07 15:46:57 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 16:01:27 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-size_t		ft_putstr(char const *s, size_t width)
+void	*vector_pop_front(t_vector *vector)
 {
-	size_t	i;
-	size_t	count;
-	size_t	len;
+	void *element;
 
-	count = 0;
-	if (s)
-	{
-		i = 0;
-		len = ft_strlen(s);
-		width = (width > 0) ? ft_min(len, width) : 0;
-		while (i < width)
-			count += ft_putchar(s[i++]);
-	}
-	return (count);
+	if (!vector)
+		return (NULL);
+	element = vector->data;
+	ft_vector_offset(vector, 0, NULL, OFFSET_LEFT);
+	vector->size--;
+	return (element);
 }
