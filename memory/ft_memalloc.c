@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 15:58:14 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 15:58:20 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:00:50 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 13:45:58 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	*ft_memalloc(size_t size)
 {
-	if (c < '0' || c > '9')
-		return (0);
-	return (1);
+	void *s;
+
+	s = NULL;
+	if (!(s = malloc(size)))
+		return (NULL);
+	ft_bzero(s, size);
+	return (s);
 }

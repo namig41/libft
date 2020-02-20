@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:05:50 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:05:52 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:01:13 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 13:46:26 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcat(char *dest, const char *src)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t len;
-	size_t i;
+	t_uc	*d;
+	t_cuc	*s;
+	size_t	i;
 
-	len = ft_strlen(dest);
+	c = (t_uc)c;
+	d = (t_uc *)dst;
+	s = (t_cuc *)src;
 	i = 0;
-	while (src[i])
+	while (i < n)
 	{
-		dest[len + i] = src[i];
+		if ((d[i] = s[i]) == c)
+			return ((void *)(d + i + 1));
 		i++;
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	return (NULL);
 }

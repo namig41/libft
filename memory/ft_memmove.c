@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:10:00 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:10:01 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:02:30 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 13:49:19 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strjoin(const char *str1, const char *str2)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*str3;
+	t_uc	*d;
+	t_cuc	*s;
 
-	if (!str1 && !str2)
+	if (!dst && !src)
 		return (NULL);
-	if (!str1)
-		return (ft_strdup(str2));
-	if (!str2)
-		return (ft_strdup(str1));
-	if (!(str3 = malloc(sizeof(*str3) *
-						(ft_strlen(str1) + ft_strlen(str2) + 1))))
-		return (NULL);
-	ft_strcpy(str3, (char *)str1);
-	ft_strcat(str3, (char *)str2);
-	return (str3);
+	d = dst;
+	s = src;
+	if (d < s)
+		while (len--)
+			*d++ = *s++;
+	else
+	{
+		s = s + len - 1;
+		d = d + len - 1;
+		while (len--)
+			*d-- = *s--;
+	}
+	return (dst);
 }

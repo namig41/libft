@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:02:30 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:02:31 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/17 17:41:08 by fpythago          #+#    #+#             */
+/*   Updated: 2020/02/17 18:18:32 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_max(size_t a, size_t b)
 {
-	t_uc	*d;
-	t_cuc	*s;
-
-	if (!dst && !src)
-		return (NULL);
-	d = dst;
-	s = src;
-	if (d < s)
-		while (len--)
-			*d++ = *s++;
+	if (a > b)
+		return (a);
 	else
-	{
-		s = s + len - 1;
-		d = d + len - 1;
-		while (len--)
-			*d-- = *s--;
-	}
-	return (dst);
+		return (b);
+}
+
+long	ft_max_l(long a, long b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }

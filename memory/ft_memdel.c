@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:01:13 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:01:14 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:02:01 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 13:48:38 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_memdel(void **ap)
 {
-	t_uc	*d;
-	t_cuc	*s;
-	size_t	i;
-
-	c = (t_uc)c;
-	d = (t_uc *)dst;
-	s = (t_cuc *)src;
-	i = 0;
-	while (i < n)
+	if (ap && *ap)
 	{
-		if ((d[i] = s[i]) == c)
-			return ((void *)(d + i + 1));
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (NULL);
 }

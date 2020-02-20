@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 16:01:51 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:01:52 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/07 16:41:20 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 13:50:26 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+void		ft_memswap(void *a, void *b, size_t size)
 {
-	t_uc	*d;
-	t_cuc	*s;
+	void	*tmp;
 
-	if (!dst && !src)
-		return (NULL);
-	d = (t_uc *)dst;
-	s = (t_cuc *)src;
-	while (n-- > 0)
-		d[n] = s[n];
-	return ((void *)(d));
+	if (!(tmp = ft_memalloc(size)))
+		return ;
+	ft_memmove(tmp, a, size);
+	ft_memmove(a, b, size);
+	ft_memmove(b, tmp, size);
+	ft_memdel(&tmp);
 }

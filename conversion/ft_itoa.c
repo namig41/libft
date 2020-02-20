@@ -43,7 +43,7 @@ char		*ft_itoa(int n)
 	if (num < 0)
 	{
 		len++;
-		num = num * -1;
+		num = -num;
 	}
 	save = num;
 	if (num == 0)
