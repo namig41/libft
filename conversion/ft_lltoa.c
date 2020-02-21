@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char		*ft_lltoa(t_ll n)
 {
-	int		size_str;
+	size_t 	size_str;
 	char	*str;
 	t_ull	n2;
 

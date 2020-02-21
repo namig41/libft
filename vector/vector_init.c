@@ -19,7 +19,7 @@ int		vector_init(t_vector *vector, size_t capacity, size_t element_size)
 	vector->size = 0;
 	vector->capacity = ft_max(VECTOR_MIN_CAPACITY, capacity);
 	vector->element_size = element_size;
-	if (!(vector->data = malloc(vector->capacity * vector->element_size)))
+	if (!(vector->data = malloc(vector_capacity_size(vector))))
 		return (VECTOR_ERROR);
 	return (VECTOR_SUCCESS);
 }

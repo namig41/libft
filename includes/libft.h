@@ -52,7 +52,6 @@ int							ft_strcmp(const char *s1, const char *s2);
 int							ft_strncmp(const char *s1, const char *s2, size_t n);
 void						ft_striter(char *s, void (*f)(char *));
 void						ft_striteri(char *s, void (*f)(unsigned int, char *));
-char						*ft_strsave(char *str1, char *str2);
 char						*ft_strnew(size_t size);
 
 int							ft_atoi(const char *str);

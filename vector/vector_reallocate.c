@@ -12,7 +12,7 @@
 
 #include "vector.h"
 
-static size_t		vector_int_capacity(size_t size, size_t speed)
+inline static size_t		vector_int_capacity(size_t size, size_t speed)
 {
 	return (size << speed);
 }
@@ -27,7 +27,6 @@ int					vector_reallocate(t_vector *vector)
 							VECTOR_SPEED), vector->element_size))
 		return (VECTOR_ERROR);
 	old.size = vector->size;
-	old.element_size = vector->element_size;
 	ft_memcpy(old.data, vector->data, vector_byte_size(vector));
 	if (!vector_move(vector, &old))
 		return (VECTOR_ERROR);

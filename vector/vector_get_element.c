@@ -12,7 +12,7 @@
 
 #include "vector.h"
 
-void	*vector_get_element(t_vector *vector, size_t index)
+inline void	*vector_get_element(t_vector *vector, size_t index)
 {
 	if (!vector && vector->size < index)
 		return (NULL);

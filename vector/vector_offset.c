@@ -12,7 +12,7 @@
 
 #include "vector.h"
 
-static void		*vector_offset(t_vector *vector, size_t index)
+inline static void		*vector_offset(t_vector *vector, size_t index)
 {
 	return (vector->data + (vector->element_size * index));
 }

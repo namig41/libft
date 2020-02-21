@@ -53,7 +53,6 @@ FUN_STRINGS = \
 		ft_strnew \
 		ft_strstr \
 		ft_strnstr \
-		ft_strsave \
 		ft_strsplit \
 		ft_strsub \
 		ft_strtrim
@@ -77,6 +76,7 @@ FUN_VECTOR = \
 		vector_is_empty \
 		vector_byte_size \
 		vector_free_size \
+		vector_capacity_size \
 		vector_resize \
 		vector_reallocate \
 		vector_offset 

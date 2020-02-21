@@ -14,12 +14,15 @@
 
 int		ft_strchri(const char *s, int c)
 {
-	int	i;
+	size_t i;
 
-	i = -1;
+	i = 0;
 	c = (t_uc)c;
-	while (s[++i])
+	while (s[i])
+	{
 		if (s[i] == c)
 			return (i);
+		i++;
+	}
 	return (-1);
 }

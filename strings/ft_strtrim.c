@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int	where_start(char const *s)
+static size_t	where_start(char const *s)
 {
-	int start;
+	size_t start;
 
 	start = 0;
 	while ((s[start] == ' ' || s[start] == '\t' || s[start] == '\n')
@@ -26,9 +26,9 @@ static int	where_start(char const *s)
 char		*ft_strtrim(char const *s)
 {
 	char	*str;
-	int		end;
-	int		len;
-	int		i;
+	size_t		end;
+	size_t		len;
+	size_t		i;
 
 	if (!s)
 		return (NULL);

@@ -20,7 +20,7 @@ int		vector_copy(t_vector *dst, const t_vector *src)
 	dst->capacity = src->capacity;
 	dst->element_size = src->element_size;
 	ft_memdel(&dst->data);
-	if (!(dst->data = malloc(dst->capacity * dst->element_size)))
+	if (!(dst->data = malloc(vector_capacity_size(src)))
 		return (VECTOR_ERROR);
 	ft_memcpy(dst->data, src->data, vector_byte_size(dst));
 	return (VECTOR_SUCCESS);

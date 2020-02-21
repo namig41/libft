@@ -59,6 +59,7 @@ int				vector_destroy(t_vector *vector);
 int				vector_is_empty(const t_vector *vector);
 size_t			vector_byte_size(const t_vector *vector);
 size_t			vector_free_size(const t_vector *vector);
+size_t 			vector_capacity_size(const t_vector *vector);
 
 int				vector_resize(t_vector *vector, size_t new_size);
 int				vector_reallocate(t_vector *vector);
