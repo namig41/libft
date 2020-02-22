@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_insert.c                                    :+:      :+:    :+:   */
+/*   vector_move_back_data.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:37:40 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:01:36 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/11 16:58:44 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:39:49 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vector_insert(t_vector *vector, size_t index, void *element)
+int		vector_move_back_array(t_vector *vector, void **ar, size_t size)
 {
-	if ((!vector && vector->size < index) || !element)
+	if (!vector_push_back_array(vector, *ar, size))
 		return (VECTOR_ERROR);
-	if (vector->size == vector->capacity && !vector_reallocate(vector))
-		return (VECTOR_ERROR);
-	ft_vector_offset(vector, index, element, OFFSET_RIGHT);
-	vector->size++;
+	ft_memdel(ar);
 	return (VECTOR_SUCCESS);
 }

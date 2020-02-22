@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_push_back.c                                 :+:      :+:    :+:   */
+/*   vector_push_data.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:38:06 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:01:20 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/11 16:34:00 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:45:03 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vector_push_back(t_vector *vector, void *element)
+int		vector_push_back_array(t_vector *vector, void *ar, size_t size)
 {
-	if (!vector || !element)
+	size_t i;
+
+	i = 0;
+	if (!vector || !ar || !size)
 		return (VECTOR_ERROR);
-	if (vector->size == vector->capacity && !vector_reallocate(vector))
-		return (VECTOR_ERROR);
-	ft_vector_offset(vector, vector->size, element, OFFSET_NO);
-	vector->size++;
+	while (i < size)
+	{
+		if (!vector_push_back_data(vector, ar + i * vector->element_size))
+			return (VECTOR_ERROR);
+		i++;
+	}
 	return (VECTOR_SUCCESS);
 }

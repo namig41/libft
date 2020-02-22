@@ -1,22 +1,21 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_move_data.c                                 :+:      :+:    :+:   */
+/*   vector_move.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 16:13:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 15:40:52 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/07 14:37:52 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:41:19 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vector_move_data(t_vector *vector, void **data)
+int     vector_move_array(t_vector *vector, void **ar, size_t size)
 {
-	if (!vector || data || !*data)
-		return (VECTOR_ERROR);
-	vector_push_back(vector, *data);
-	ft_memdel(data);
-	return (VECTOR_SUCCESS);
+    if (!vector || !ar || !*ar)
+        return (VECTOR_ERROR);
+    if (!vector_destroy(vector) && !vector_move_back_array(vector, *ar, size))
+        return (VECTOR_ERROR);
+    return (VECTOR_SUCCESS);
 }

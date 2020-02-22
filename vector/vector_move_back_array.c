@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_push_front.c                                :+:      :+:    :+:   */
+/*   vector_move_back_data.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:38:16 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:02:12 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/11 16:58:44 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:39:49 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vector_push_front(t_vector *vector, void *element)
+int		vector_move_back_array(t_vector *vector, void **ar, size_t size)
 {
-	if (!vector || !element)
+	if (!vector_push_back_array(vector, *ar, size))
 		return (VECTOR_ERROR);
-	if (vector->size == vector->capacity && !vector_reallocate(vector))
-		return (VECTOR_ERROR);
-	ft_vector_offset(vector, 0, element, OFFSET_RIGHT);
-	vector->size++;
+	ft_memdel(ar);
 	return (VECTOR_SUCCESS);
 }

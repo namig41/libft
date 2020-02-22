@@ -1,12 +1,9 @@
 # **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
+#                                                                              # #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+         #
+#                                                     +:+ +:+         +:+      # #    By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/09/27 15:54:57 by lcarmelo          #+#    #+#              #
-#    Updated: 2020/02/20 21:10:07 by lcarmelo         ###   ########.fr        #
+#    Created: 2019/09/27 15:54:57 by lcarmelo          #+#    #+#              # #    Updated: 2020/02/20 21:10:07 by lcarmelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,12 +58,13 @@ FUN_VECTOR = \
 		vector_init \
 		vector_copy \
 		vector_move \
-		vector_move_data \
+		vector_move_array \
+		vector_move_back_array \
+		vector_push_back_array \
 		vector_move_back_data \
-		vector_push_data \
-		vector_push_back \
-		vector_push_front \
-		vector_insert \
+		vector_push_back_data \
+		vector_push_front_data \
+		vector_insert_data \
 		vector_get_element \
 		vector_pop_back \
 		vector_pop_front \
@@ -103,6 +101,9 @@ FUN_DISPLAY = \
 		ft_putnbr \
 		ft_putstr
 
+FUN_GNL = \
+		get_next_line
+
 DIR_CONVERSION  = ./conversion/
 DIR_MEMORY      = ./memory/
 DIR_STRINGS     = ./strings/
@@ -110,6 +111,7 @@ DIR_VECTOR 		= ./vector/
 DIR_MATH 		= ./math/
 DIR_CTYPE 		= ./ctype/
 DIR_DISP 		= ./display/
+DIR_GNL 		= ./gnl/
 DIR_INC   		= ./includes
 
 SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSION)))
@@ -119,13 +121,15 @@ SRC_VECTOR 		= $(addprefix $(DIR_VECTOR), $(addsuffix .c, $(FUN_VECTOR)))
 SRC_DIPLAY		= $(addprefix $(DIR_DISP), $(addsuffix .c, $(FUN_DISPLAY)))
 SRC_CTYPE 		= $(addprefix $(DIR_CTYPE), $(addsuffix .c, $(FUN_CTYPE)))
 SRC_MATH 		= $(addprefix $(DIR_MATH), $(addsuffix .c, $(FUN_MATH)))
+SRC_GNL 		= $(addprefix $(DIR_GNL), $(addsuffix .c, $(FUN_GNL)))
 
-SRC_ALL         = $(SRC_CONVERSION) $(SRC_MEMORY) $(SRC_STRINGS) $(SRC_VECTOR) $(SRC_MATH) $(SRC_CTYPE) $(SRC_DIPLAY)
-OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY))
+SRC_ALL         = $(SRC_CONVERSION) $(SRC_MEMORY) $(SRC_STRINGS) $(SRC_VECTOR) $(SRC_MATH) $(SRC_CTYPE) $(SRC_DIPLAY) $(SRC_GNL)
+OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
 
 CC              = gcc
 NAME            = libft.a
-CFLAGS          = -Wall -Werror -Wextra -O2 -I$(DIR_INC)
+#CFLAGS          = -Wall -Werror -Wextra -O2 -I$(DIR_INC)
+CFLAGS          = -I$(DIR_INC)
 
 all: $(NAME)
 

@@ -39,14 +39,14 @@ int				vector_copy(t_vector *dst, const t_vector *src);
 
 int				vector_swap(t_vector *dst, t_vector *src);
 int				vector_move(t_vector *dst, t_vector *src);
-int				vector_move_data(t_vector *vector, void **data);
-int				vector_move_back_data(t_vector *vector,
-								void **data, size_t size);
+int             vector_move_back_data(t_vector *vector, void **data);
+int             vector_move_array(t_vector *vector, void **ar, size_t size);
+int				vector_move_back_array(t_vector *vector, void **ar, size_t size);
 
-int				vector_push_back(t_vector *vector, void	*element);
-int				vector_push_front(t_vector *vector, void *element);
-int				vector_insert(t_vector *vector, size_t index, void *element);
-int				vector_push_data(t_vector *vector, void *data, size_t size);
+int				vector_push_back_data(t_vector *vector, void *element);
+int				vector_push_back_array(t_vector *vector, void *data, size_t size);
+int				vector_push_front_data(t_vector *vector, void *element);
+int				vector_insert_data(t_vector *vector, size_t index, void *element);
 
 void			*vector_get_element(t_vector *element, size_t index);
 
