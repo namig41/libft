@@ -12,23 +12,23 @@
 
 #include "vector.h"
 
-inline static size_t		vector_int_capacity(size_t size, size_t speed)
+inline static size_t increase_capacity(size_t size, size_t speed)
 {
 	return (size << speed);
 }
 
 int					vector_reallocate(t_vector *vector)
 {
-	t_vector old;
+	void *data;
 
 	if (!vector)
 		return (VECTOR_ERROR);
-	if (!vector_init(&old, vector_int_capacity(vector->capacity,
-							VECTOR_SPEED), vector->element_size))
+	vector->capacity = increase_capacity(vector->capacity, VECTOR_SPEED);
+	if (!(data = malloc(vector->capacity)))
 		return (VECTOR_ERROR);
-	old.size = vector->size;
-	ft_memcpy(old.data, vector->data, vector_byte_size(vector));
-	if (!vector_move(vector, &old))
+	if (!ft_memcpy(data, vector->data, vector_byte_size(vector)))
 		return (VECTOR_ERROR);
+	ft_memdel(&vector->data);
+	vector->data = data;
 	return (VECTOR_SUCCESS);
 }
