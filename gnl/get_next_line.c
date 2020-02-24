@@ -14,29 +14,28 @@
 
 int					get_next_line(const int fd, char **line)
 {
-	static t_vector c[MAX_FILES] = {NULL};
+	static t_vector c = {NULL};
 	char 			*s;
 	char			buf[BUFF_SIZE + 1];
 	int				shift;
 	int				n;
 
-	if ((shift = (fd < 0 || !line || fd >= MAX_FILES)))
+	if (shift = (fd < 0 || !line))
 		return (MEM_ERR);
-	vector_init(&c[fd], BUFF_SIZE, sizeof(char));
-	while (!(s = ft_strchr(c[fd].data + (shift += !shift ? 0 : n), SEPARATOR)))
+	vector_init(&c, BUFF_SIZE, sizeof(char));
+	while (!(s = vector_chr(&c, shift += !shift ? 0 : n, SEPARATOR)))
 	{
 		if ((n = read(fd, buf, BUFF_SIZE)) <= 0)
 			break ;
 		buf[n] = '\0';
-		if (!vector_move_back_array(&c[fd], (void **)&buf, n))
+		if (!vector_push_back_array(&c, buf, n))
 			return (MEM_ERR);
 	}
-	if ((!vector_is_empty(&c[fd]) && !n) || n < 1 || !vector_is_empty(&c[fd]))
+	if ((vector_is_empty(&c) && !n) || n < 1 || vector_is_empty(&c))
 		return (n < 0 ? MEM_ERR : END_FILE);
-	n = s ? (s - (char *)c[fd].data) : c[fd].size;
-	if (!(*line = ft_strnew(n)) & !ft_memcpy(*line, c[fd].data, n))
+	n = s ? (s++ - (char *)c.data) : c.size;
+	if (!(*line = ft_strnew(n)) & !ft_memcpy(*line, c.data, n))
 		return (MEM_ERR);
-    s = ft_strdup(s + 1);
-    vector_move_array(&c[fd], (void **)&s, ft_strlen(s));
+    vector_memmove(&c, (void *)s, c.data + c.size - (void *)s);
 	return (SUCCESS);
 }

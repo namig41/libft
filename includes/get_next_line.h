@@ -1,7 +1,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # define BUFF_SIZE	1
-# if BUFF_SIZE < 0
+# if BUFF_SIZE <= 0
 #  error "BUFF_SIZE has wrong size"
 # endif
 # define SEPARATOR '\n'

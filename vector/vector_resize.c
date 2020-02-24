@@ -14,7 +14,7 @@
 
 int		vector_resize(t_vector *vector, size_t new_size)
 {
-	if (!vector)
+	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
 	if (vector->size < new_size && vector->capacity < new_size)
 	{

@@ -21,7 +21,7 @@ int					vector_reallocate(t_vector *vector)
 {
 	void *data;
 
-	if (!vector)
+	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
 	vector->capacity = increase_capacity(vector->capacity, VECTOR_SPEED);
 	if (!(data = malloc(vector->capacity)))

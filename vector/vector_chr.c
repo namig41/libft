@@ -1,25 +1,22 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_pop_front.c                                 :+:      :+:    :+:   */
+/*   vector_byte_size.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 15:46:57 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:01:27 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/07 14:37:05 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/17 15:31:02 by fpythago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-void	*vector_pop_front(t_vector *vector)
+void 			*vector_chr(t_vector *vector, size_t offset, int c)
 {
-	void *element;
-
 	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
-	element = vector->data;
-	ft_vector_offset(vector, 0, NULL, OFFSET_LEFT);
-	vector->size--;
-	return (element);
+	return (ft_memchr(vector->data + offset * vector->element_size, c,
+					vector_byte_size(vector)));
 }

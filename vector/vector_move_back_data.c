@@ -14,7 +14,7 @@
 
 int		vector_move_back_data(t_vector *vector, void **data)
 {
-	if (!vector || data || !*data)
+	if (!vector_is_initialized(vector) || data || !*data)
 		return (VECTOR_ERROR);
 	vector_push_back_data(vector, *data);
 	ft_memdel(data);

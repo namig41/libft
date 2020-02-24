@@ -57,9 +57,13 @@ int				vector_clear(t_vector *vector);
 int				vector_destroy(t_vector *vector);
 
 int				vector_is_empty(const t_vector *vector);
+int 			vector_is_initialized(const t_vector *vector);
 size_t			vector_byte_size(const t_vector *vector);
 size_t			vector_free_size(const t_vector *vector);
 size_t 			vector_capacity_size(const t_vector *vector);
+
+void 			*vector_chr(t_vector *vector, size_t offset, int c);
+int 			vector_memmove(t_vector *vector, void *ptr, size_t len);
 
 int				vector_resize(t_vector *vector, size_t new_size);
 int				vector_reallocate(t_vector *vector);

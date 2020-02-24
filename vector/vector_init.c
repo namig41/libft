@@ -14,7 +14,7 @@
 
 int		vector_init(t_vector *vector, size_t capacity, size_t element_size)
 {
-	if (!vector)
+	if (!vector && vector_is_initialized(vector))
 		return (VECTOR_ERROR);
 	vector->size = 0;
 	vector->capacity = ft_max(VECTOR_MIN_CAPACITY, capacity);

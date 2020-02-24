@@ -13,7 +13,7 @@
 
 int     vector_move_array(t_vector *vector, void **ar, size_t size)
 {
-    if (!vector || !ar || !*ar)
+    if (!vector_is_initialized(vector) || !ar || !*ar)
         return (VECTOR_ERROR);
     if (!vector_destroy(vector) && !vector_move_back_array(vector, *ar, size))
         return (VECTOR_ERROR);

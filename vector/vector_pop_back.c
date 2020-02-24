@@ -14,7 +14,7 @@
 
 void	*vector_pop_back(t_vector *vector)
 {
-	if (!vector)
-		return (NULL);
+	if (!vector_is_initialized(vector))
+		return (VECTOR_ERROR);
 	return (vector_get_element(vector, vector->size--));
 }

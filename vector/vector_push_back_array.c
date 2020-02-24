@@ -16,9 +16,9 @@ int		vector_push_back_array(t_vector *vector, void *ar, size_t size)
 {
 	size_t i;
 
-	i = 0;
-	if (!vector || !ar || !size)
+	if (!vector_is_initialized(vector) || !ar)
 		return (VECTOR_ERROR);
+	i = 0;
 	while (i < size)
 	{
 		if (!vector_push_back_data(vector, ar + i * vector->element_size))

@@ -14,7 +14,7 @@
 
 int		vector_push_back_data(t_vector *vector, void *element)
 {
-	if (!vector || !element)
+	if (!vector_is_initialized(vector) || !element)
 		return (VECTOR_ERROR);
 	if (vector->size == vector->capacity && !vector_reallocate(vector))
 		return (VECTOR_ERROR);

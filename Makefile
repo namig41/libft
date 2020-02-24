@@ -72,12 +72,15 @@ FUN_VECTOR = \
 		vector_clear \
 		vector_destroy \
 		vector_is_empty \
+		vector_is_initialized \
 		vector_byte_size \
 		vector_free_size \
 		vector_capacity_size \
 		vector_resize \
 		vector_reallocate \
-		vector_offset 
+		vector_offset \
+		vector_chr \
+		vector_memmove
 
 FUN_MATH = \
 		ft_max \
