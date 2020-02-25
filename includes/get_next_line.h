@@ -4,8 +4,8 @@
 # if BUFF_SIZE <= 0
 #  error "BUFF_SIZE has wrong size"
 # endif
+# define VEC_SIZE 4
 # define SEPARATOR '\n'
-# define MAX_FILES	100000
 # define SUCCESS 1
 # define END_FILE 0
 # define MEM_ERR -1

@@ -14,7 +14,7 @@
 
 int					get_next_line(const int fd, char **line)
 {
-	static t_vector c = {NULL};
+	static t_vector c;
 	char 			*s;
 	char			buf[BUFF_SIZE + 1];
 	int				shift;
@@ -22,7 +22,7 @@ int					get_next_line(const int fd, char **line)
 
 	if (shift = (fd < 0 || !line))
 		return (MEM_ERR);
-	vector_init(&c, BUFF_SIZE, sizeof(char));
+	vector_init(&c, VEC_SIZE, sizeof(char));
 	while (!(s = vector_chr(&c, shift += !shift ? 0 : n, SEPARATOR)))
 	{
 		if ((n = read(fd, buf, BUFF_SIZE)) <= 0)
@@ -32,7 +32,10 @@ int					get_next_line(const int fd, char **line)
 			return (MEM_ERR);
 	}
 	if ((vector_is_empty(&c) && !n) || n < 1 || vector_is_empty(&c))
+	{
+		vector_destroy(&c);
 		return (n < 0 ? MEM_ERR : END_FILE);
+	}
 	n = s ? (s++ - (char *)c.data) : c.size;
 	if (!(*line = ft_strnew(n)) & !ft_memcpy(*line, c.data, n))
 		return (MEM_ERR);

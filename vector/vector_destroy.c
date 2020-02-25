@@ -14,7 +14,7 @@
 
 int		vector_destroy(t_vector *vector)
 {
-	if (!vector)
+	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
 	ft_memdel(&vector->data);
 	return (VECTOR_SUCCESS);

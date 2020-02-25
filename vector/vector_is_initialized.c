@@ -14,5 +14,5 @@
 
 inline int 	vector_is_initialized(const t_vector *vector)
 {
-	return (vector && (vector->data && vector->capacity));
+	return (vector && vector->data && vector->capacity);
 }
