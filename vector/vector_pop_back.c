@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:33:11 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/26 19:00:20 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/02/26 19:13:19 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*vector_pop_back(t_vector *vector)
 		return (VECTOR_ERROR);
     if (!(data = malloc(vector->element_size)))
         return (VECTOR_ERROR);
-    ft_memcpy(data, vector_get_element(vector, vector->size - 1), vector->element_size)
+    ft_memcpy(data, vector_get_element(vector, vector->size - 1), vector->element_size);
     vector->size--;
 	return (data);
 }
