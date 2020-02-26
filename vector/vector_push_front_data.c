@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_push_front.c                                :+:      :+:    :+:   */
+/*   vector_push_front_data.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:38:16 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:02:12 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/26 18:29:22 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/26 18:32:45 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-int		vector_push_front_data(t_vector *vector, void *element)
+int		vector_push_front_data(t_vector *vector, void *data)
 {
-	if (!vector_is_initialized(vector) || !element)
+	if (!vector_is_initialized(vector) || !data)
 		return (VECTOR_ERROR);
 	if (vector->size == vector->capacity && !vector_reallocate(vector))
 		return (VECTOR_ERROR);
-	ft_vector_offset(vector, 0, element, OFFSET_RIGHT);
+	ft_vector_offset(vector, 0, data, OFFSET_RIGHT);
 	vector->size++;
 	return (VECTOR_SUCCESS);
 }

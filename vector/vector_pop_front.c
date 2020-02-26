@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:46:57 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 16:01:27 by fpythago         ###   ########.fr       */
+/*   Updated: 2020/02/26 18:35:36 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*vector_pop_front(t_vector *vector)
 {
-	void *element;
+	void *data;
 
 	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
-	element = vector->data;
+    if (!(data = malloc(vector->element_size)))
+        return (VECTOR_ERROR);
+	ft_memcpy(data, vector->data, vector->element_size);
 	ft_vector_offset(vector, 0, NULL, OFFSET_LEFT);
 	vector->size--;
-	return (element);
+	return (data);
 }
