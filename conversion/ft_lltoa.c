@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 15:58:43 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 13:24:55 by fpythago         ###   ########.fr       */
+/*   Updated: 2020/02/27 17:20:18 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_lltoa(t_ll n)
 {
-	size_t 	size_str;
+	t_ll size_str;
 	char	*str;
 	t_ull	n2;
 

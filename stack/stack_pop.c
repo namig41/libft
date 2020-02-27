@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_random.c                                        :+:      :+:    :+:   */
+/*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:01:37 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 18:28:36 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/27 16:54:29 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/27 18:31:45 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-static	t_ull	g_next = 1;
-
-t_ui			ft_random(t_ui rand_max)
+inline void	*stack_pop(t_stack *stack)
 {
-	g_next = g_next * 1103515245 + 12345;
-	return (t_ui)(g_next / 65536) % (rand_max + 1);
+	return (vector_pop_back(stack));
 }
+

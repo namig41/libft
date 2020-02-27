@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_random.c                                        :+:      :+:    :+:   */
+/*   vector_byte_capacity.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:01:37 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 18:28:36 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/27 17:24:24 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/27 17:24:39 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-static	t_ull	g_next = 1;
-
-t_ui			ft_random(t_ui rand_max)
+inline size_t vector_byte_capacity(const t_vector *vector)
 {
-	g_next = g_next * 1103515245 + 12345;
-	return (t_ui)(g_next / 65536) % (rand_max + 1);
+	return ((vector) ? vector->capacity * vector->size : VECTOR_ERROR);
 }
+

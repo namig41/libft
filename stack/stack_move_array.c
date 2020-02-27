@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_random.c                                        :+:      :+:    :+:   */
+/*   stack_move_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:01:37 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 18:28:36 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/27 16:58:00 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/27 17:00:02 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-static	t_ull	g_next = 1;
-
-t_ui			ft_random(t_ui rand_max)
+inline int stack_move_array(t_stack *stack, void **ar, size_t size)
 {
-	g_next = g_next * 1103515245 + 12345;
-	return (t_ui)(g_next / 65536) % (rand_max + 1);
+	return (vector_move_back_array(stack, ar, size));
 }

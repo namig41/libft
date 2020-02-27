@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 18:41:12 by fpythago          #+#    #+#             */
-/*   Updated: 2020/02/19 13:44:32 by fpythago         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:35:41 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# define TRUE 1
+# define FALSE 0
 
 typedef unsigned char		t_uc;
 typedef long double			t_ld;

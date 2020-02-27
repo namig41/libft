@@ -6,7 +6,7 @@
 #    By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 15:25:35 by lcarmelo          #+#    #+#              #
-#    Updated: 2020/02/26 18:04:59 by lcarmelo         ###   ########.fr        #
+#    Updated: 2020/02/27 18:14:06 by lcarmelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,12 +78,27 @@ FUN_VECTOR = \
 		vector_is_initialized \
 		vector_byte_size \
 		vector_free_size \
-		vector_capacity_size \
+		vector_byte_capacity \
 		vector_resize \
 		vector_reallocate \
 		vector_offset \
 		vector_chr \
 		vector_memmove
+
+FUN_STACK = \
+		stack_byte_size \
+		stack_byte_capacity \
+		stack_init \
+		stack_destroy \
+		stack_is_empty \
+		stack_is_initialized \
+		stack_move \
+		stack_move_data \
+		stack_move_array \
+		stack_pop \
+		stack_push \
+		stack_top \
+		stack_get_element
 
 FUN_MATH = \
 		ft_max \
@@ -114,6 +129,7 @@ DIR_CONVERSION  = ./conversion/
 DIR_MEMORY      = ./memory/
 DIR_STRINGS     = ./strings/
 DIR_VECTOR 		= ./vector/
+DIR_STACK 		= ./stack/
 DIR_MATH 		= ./math/
 DIR_CTYPE 		= ./ctype/
 DIR_DISP 		= ./display/
@@ -124,18 +140,19 @@ SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSIO
 SRC_STRINGS     = $(addprefix $(DIR_STRINGS), $(addsuffix .c, $(FUN_STRINGS)))
 SRC_MEMORY      = $(addprefix $(DIR_MEMORY), $(addsuffix .c, $(FUN_MEMORY)))
 SRC_VECTOR 		= $(addprefix $(DIR_VECTOR), $(addsuffix .c, $(FUN_VECTOR)))
+SRC_STACK 		= $(addprefix $(DIR_STACK), $(addsuffix .c, $(FUN_STACK)))
 SRC_DIPLAY		= $(addprefix $(DIR_DISP), $(addsuffix .c, $(FUN_DISPLAY)))
 SRC_CTYPE 		= $(addprefix $(DIR_CTYPE), $(addsuffix .c, $(FUN_CTYPE)))
 SRC_MATH 		= $(addprefix $(DIR_MATH), $(addsuffix .c, $(FUN_MATH)))
 SRC_GNL 		= $(addprefix $(DIR_GNL), $(addsuffix .c, $(FUN_GNL)))
 
-SRC_ALL         = $(SRC_CONVERSION) $(SRC_MEMORY) $(SRC_STRINGS) $(SRC_VECTOR) $(SRC_MATH) $(SRC_CTYPE) $(SRC_DIPLAY) $(SRC_GNL)
-OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
+SRC_ALL         = $(SRC_CONVERSION) $(SRC_MEMORY) $(SRC_STRINGS) $(SRC_VECTOR) $(SRC_STACK) $(SRC_MATH) $(SRC_CTYPE) $(SRC_DIPLAY) $(SRC_GNL)
+OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
 
 CC              = gcc
 NAME            = libft.a
-#CFLAGS          = -Wall -Werror -Wextra -O2 -I$(DIR_INC)
-CFLAGS          = -O2 -I$(DIR_INC)
+CFLAGS          = -Wall -Werror -Wextra -O2 -I$(DIR_INC)
+#CFLAGS          = -O2 -I$(DIR_INC)
 
 all: $(NAME)
 

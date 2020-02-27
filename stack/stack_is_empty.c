@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_pop_back.c                                  :+:      :+:    :+:   */
+/*    stack_is_empty.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 15:33:11 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 18:36:03 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/02/07 16:16:07 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/27 17:00:53 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "stack.h"
 
-void	*vector_pop_back(t_vector *vector)
+inline int stack_is_empty(const t_stack *stack)
 {
-    void *data;
-
-	if (!vector_is_initialized(vector))
-		return (VECTOR_ERROR);
-    if (!(data = malloc(vector->element_size)))
-        return (VECTOR_ERROR);
-    ft_memcpy(data, vector_get_element(vector, vector->size - 1), vector->element_size);
-    vector->size--;
-	return (data);
+	return (vector_is_empty(stack));
 }
-

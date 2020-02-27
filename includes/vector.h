@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:23:50 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 18:58:56 by fpythago         ###   ########.fr       */
+/*   Updated: 2020/02/27 17:24:58 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int				vector_is_empty(const t_vector *vector);
 int 			vector_is_initialized(const t_vector *vector);
 size_t			vector_byte_size(const t_vector *vector);
 size_t			vector_free_size(const t_vector *vector);
-size_t 			vector_capacity_size(const t_vector *vector);
+size_t 			vector_byte_capacity(const t_vector *vector);
 
 void 			*vector_chr(t_vector *vector, size_t offset, int c);
 int 			vector_memmove(t_vector *vector, void *ptr, size_t len);

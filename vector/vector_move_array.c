@@ -1,11 +1,12 @@
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_move.c                                      :+:      :+:    :+:   */
+/*   vector_move_array.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:37:52 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 15:41:19 by fpythago         ###   ########.fr       */
+/*   Created: 2020/02/27 19:26:51 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/02/27 19:27:01 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +20,4 @@ int     vector_move_array(t_vector *vector, void **ar, size_t size)
         return (VECTOR_ERROR);
     return (VECTOR_SUCCESS);
 }
+

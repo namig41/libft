@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 18:29:20 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/26 15:59:03 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/02/27 19:24:37 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int					get_next_line(const int fd, char **line)
 	int				shift;
 	int				n;
 
-	if (shift = (fd < 0 || !line))
+	if (fd < 0 || !line)
 		return (MEM_ERR);
+    shift = 0;
 	vector_init(&c, VEC_SIZE, sizeof(char));
 	while (!(s = vector_chr(&c, shift += !shift ? 0 : n, SEPARATOR)))
 	{
@@ -42,3 +43,4 @@ int					get_next_line(const int fd, char **line)
     vector_memmove(&c, (void *)s, c.data + c.size - (void *)s);
 	return (SUCCESS);
 }
+
