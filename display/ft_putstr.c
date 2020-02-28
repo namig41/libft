@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:05:17 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:05:19 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/02/28 18:37:07 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void		ft_putstr(char const *s)
 {
-	size_t i;
-
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
+	if (s)
+        write(1, s, ft_strlen(s));
 }

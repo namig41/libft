@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:23:50 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 17:24:58 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/02/28 16:52:13 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define OFFSET_RIGHT               2
 
 # if VECTOR_SPEED <= 0
-#  define VECTOR_SPEED 	    2
+#  define VECTOR_SPEED 	            2
 # endif
 
 typedef struct	s_vector {
