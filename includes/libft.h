@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # define TRUE 1
 # define FALSE 0
 
@@ -70,6 +71,7 @@ int							ft_isalnum(int c);
 int							ft_isalpha(int c);
 int 						ft_isascii(int c);
 
+int                         ft_bpow(int a, int n);
 size_t						ft_max(size_t a, size_t b);
 long						ft_max_l(long a, long b);
 size_t						ft_min(size_t a, size_t b);
