@@ -17,6 +17,7 @@
 typedef t_vector    t_stack;
 
 void                *stack_top(t_stack *stack);
+void 				*stack_second(t_stack *stack);
 void                *stack_get_element(t_stack *stack, size_t index);
 void                *stack_pop(t_stack *stack);
 size_t              stack_byte_size(const t_stack *stack);

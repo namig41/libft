@@ -98,6 +98,7 @@ FUN_STACK = \
 		stack_pop \
 		stack_push \
 		stack_top \
+		stack_second \
 		stack_get_element
 
 FUN_MATH = \
