@@ -29,6 +29,11 @@ typedef unsigned int		t_ui;
 typedef unsigned short int	t_usi;
 typedef long				t_l;
 
+/*
+** --------------------------- FUNCTIONS ------------------------------------------
+** --------------------------- MEMORY ---------------------------------------------
+*/
+
 void						*ft_memset(void *b, int c, size_t len);
 void						ft_bzero(void *s, size_t n);
 void						*ft_memcpy(void *dst, const void *src, size_t n);
@@ -40,6 +45,10 @@ void						*ft_memalloc(size_t size);
 void						ft_memdel(void **ap);
 void						ft_memswap(void *a, void *b, size_t size);
 void						ft_swap(void **a, void **b);
+
+/*
+** --------------------------- STRINGS ---------------------------------------------
+*/
 
 size_t						ft_strlen(const char *s);
 char						*ft_strchr(const char *str, int ch);
@@ -57,6 +66,11 @@ void						ft_striter(char *s, void (*f)(char *));
 void						ft_striteri(char *s, void (*f)(unsigned int, char *));
 char						*ft_strnew(size_t size);
 
+
+/* 
+** --------------------------- CONVERSION ---------------------------------------------
+*/
+
 int							ft_atoi(const char *str);
 char						*ft_itoa(int n);
 char						*ft_lltoa(t_ll n);
@@ -65,11 +79,19 @@ char						*ft_ulltoa_base(t_ull value, int base, char reg);
 int							ft_tolower(int c);
 int							ft_toupper(int c);
 
+/* 
+** --------------------------- CTYPE ---------------------------------------------
+*/
+
 int							ft_isdigit(int c);
 int							ft_isprint(int c);
 int							ft_isalnum(int c);
 int							ft_isalpha(int c);
 int 						ft_isascii(int c);
+
+/* 
+** --------------------------- MATH ---------------------------------------------
+*/
 
 int                         ft_bpow(int a, int n);
 size_t						ft_max(size_t a, size_t b);
@@ -77,6 +99,10 @@ long						ft_max_l(long a, long b);
 size_t						ft_min(size_t a, size_t b);
 long						ft_min_l(long a, long b);
 t_ui						ft_random(t_ui rand_max);
+
+/* 
+** --------------------------- DISPLAY ---------------------------------------------
+*/
 
 void						ft_putchar_fd(char c, int fd);
 void						ft_putendl_fd(char const *s, int fd);
