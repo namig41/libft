@@ -17,5 +17,6 @@ int		vector_clear(t_vector *vector)
 	if (!vector)
 		return (VECTOR_ERROR);
 	ft_bzero(vector->data, vector_byte_size(vector));
+	vector->size = 0;
 	return (VECTOR_SUCCESS);
 }
