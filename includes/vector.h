@@ -84,6 +84,12 @@ void			*vector_get_element(t_vector *element, size_t index);
 void 			*vector_chr(t_vector *vector, size_t offset, int c);
 
 /*
+** --------------------------- SET ELEMENT -------------------------------------------
+*/
+
+int				vector_set_element(t_vector *element, void *data, size_t index);
+
+/*
 ** --------------------------- DELETION ----------------------------------------------
 */
 
@@ -116,5 +122,10 @@ int				vector_reallocate(t_vector *vector);
 
 void			ft_vector_offset(t_vector *vector, size_t index,
 								void *element, t_uc offset_flag);
+/* 
+** --------------------------- ALGORITHM --------------------------------------------------
+*/
+
+int 			vector_qsort(t_vector *vector);
 
 #endif

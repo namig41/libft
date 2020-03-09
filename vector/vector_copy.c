@@ -19,7 +19,7 @@ int		vector_copy(t_vector *dst, const t_vector *src)
 	if (src->size < dst->capacity) 
 	{
 		//vector_clear(dst);
-		ft_memcpy(dst->data, src->data, vector_byte_size(dst));
+		ft_memcpy(dst->data, src->data, vector_byte_size(src));
 	}
 	else
 	{

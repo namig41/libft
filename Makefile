@@ -69,6 +69,7 @@ FUN_VECTOR = \
 		vector_push_front_data \
 		vector_insert_data \
 		vector_get_element \
+		vector_set_element \
 		vector_pop_back \
 		vector_pop_front \
 		vector_erase \
@@ -83,7 +84,8 @@ FUN_VECTOR = \
 		vector_reallocate \
 		vector_offset \
 		vector_chr \
-		vector_memmove
+		vector_memmove \
+		vector_qsort
 
 FUN_STACK = \
 		stack_byte_size \
