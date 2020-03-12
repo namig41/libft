@@ -6,7 +6,7 @@
 #    By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 15:25:35 by lcarmelo          #+#    #+#              #
-#    Updated: 2020/02/27 19:30:03 by lcarmelo         ###   ########.fr        #
+#    Updated: 2020/03/12 19:39:10 by lcarmelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,7 +107,8 @@ FUN_MATH = \
 		ft_max \
 		ft_min \
 		ft_random \
-		ft_bpow
+		ft_bpow \
+		ft_abs
 
 FUN_CTYPE = \
 		ft_isprint \

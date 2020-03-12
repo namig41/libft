@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 18:41:12 by fpythago          #+#    #+#             */
-/*   Updated: 2020/02/27 15:35:41 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/11 17:21:06 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int 						ft_isascii(int c);
 */
 
 int                         ft_bpow(int a, int n);
+int                         ft_abs(int num);
 size_t						ft_max(size_t a, size_t b);
 long						ft_max_l(long a, long b);
 size_t						ft_min(size_t a, size_t b);

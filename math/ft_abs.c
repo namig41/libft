@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_move_back_data.c                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 16:58:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/11 15:35:02 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/03/11 17:19:46 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/03/11 17:20:21 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
-
-int		vector_move_back_array(t_vector *vector, void **ar, size_t size)
+int     ft_abs(int num)
 {
-	if (!vector_push_back_array(vector, *ar, size))
-		return (VECTOR_ERROR);
-	ft_memdel(ar);
-	return (VECTOR_SUCCESS);
+    return (num > 0 ? num : -num);
 }
