@@ -4,8 +4,7 @@
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 18:41:12 by fpythago          #+#    #+#             */
+/*                                                +#+#+#+#+#+   +#+           */ /*   Created: 2020/02/11 18:41:12 by fpythago          #+#    #+#             */
 /*   Updated: 2020/03/11 17:21:06 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -53,6 +52,8 @@ void						ft_swap(void **a, void **b);
 size_t						ft_strlen(const char *s);
 char						*ft_strchr(const char *str, int ch);
 int							ft_strchri(const char *str, int ch);
+int 						ft_strequ(const char *s1, const char *s2);
+int 						ft_strnequ(const char *s1, const char *s2, size_t n);
 char						*ft_strcat(char *dest, const char *src);
 char						*ft_strncat(char *dest, const char *src, size_t n);
 char						*ft_strjoin(const char *str1, const char *str2);
