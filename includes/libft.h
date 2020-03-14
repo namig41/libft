@@ -72,7 +72,7 @@ char						*ft_strnew(size_t size);
 ** --------------------------- CONVERSION ---------------------------------------------
 */
 
-int							ft_atoi(const char *str);
+int							ft_atoi(char *str);
 char						*ft_itoa(int n);
 char						*ft_lltoa(t_ll n);
 char						*ft_uitoa_base(t_ui value, int base, char reg);
@@ -89,6 +89,7 @@ int							ft_isprint(int c);
 int							ft_isalnum(int c);
 int							ft_isalpha(int c);
 int 						ft_isascii(int c);
+int 						ft_isescape(int c);
 
 /* 
 ** --------------------------- MATH ---------------------------------------------

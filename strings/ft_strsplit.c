@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:12:28 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:12:29 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/14 19:19:45 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char		**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	i = 0;
 	if (!(arr = ft_count_words(s, c)))

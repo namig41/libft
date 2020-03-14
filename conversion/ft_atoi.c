@@ -6,13 +6,13 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 15:56:15 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/13 16:56:58 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/14 16:23:53 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_atoi(const char *str)
+int					ft_atoi(char *str)
 {
 	t_ll			max;
 	t_ll			prev;

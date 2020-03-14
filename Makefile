@@ -6,7 +6,7 @@
 #    By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 15:25:35 by lcarmelo          #+#    #+#              #
-#    Updated: 2020/03/13 18:36:10 by lcarmelo         ###   ########.fr        #
+#    Updated: 2020/03/14 19:35:52 by lcarmelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,7 +115,8 @@ FUN_CTYPE = \
         ft_isdigit \
 		ft_isalnum \
 		ft_isascii \
-		ft_isalpha
+		ft_isalpha \
+		ft_isescape
 
 FUN_DISPLAY = \
 		ft_putchar_fd \
@@ -162,7 +163,7 @@ CFLAGS          = -O2 -I$(DIR_INC)
 all: $(NAME)
 
 $(OBJ_ALL):
-	$(CC) -c $(CFLAGS) $(SRC_ALL) 
+	@$(CC) -c $(CFLAGS) $(SRC_ALL) 
 
 $(NAME): $(OBJ_ALL)
 	@ar rc $(NAME) $?
