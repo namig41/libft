@@ -6,13 +6,13 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:01:39 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 17:03:08 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:26:26 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-inline void *stack_top(t_stack *stack)
+inline void	*stack_top(t_stack *stack)
 {
-    return (vector_get_element(stack, stack->size - 1));
+	return (vector_get_element(stack, stack->size - 1));
 }

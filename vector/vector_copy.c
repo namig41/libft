@@ -6,7 +6,7 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 14:37:21 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/14 15:55:52 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 10:43:21 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@ int		vector_copy(t_vector *dst, const t_vector *src)
 {
 	if (!dst || !src)
 		return (VECTOR_ERROR);
-	if (src->size <= dst->capacity) 
-	{
-		//vector_clear(dst);
+	if (src->size <= dst->capacity)
 		ft_memcpy(dst->data, src->data, vector_byte_size(src));
-	}
 	else
 	{
 		ft_memdel(&dst->data);

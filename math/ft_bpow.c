@@ -6,23 +6,23 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 17:41:08 by fpythago          #+#    #+#             */
-/*   Updated: 2020/02/17 18:18:32 by fpythago         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:22:43 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_bpow(int a, int n)
+int		ft_bpow(int a, int n)
 {
-    int res;
+	int	res;
 
-    res = 1;
-    while (n > 0)
-    {
-        if (n & 1)
-            res *= a;
-        a *= a;
-        n >>= 1;
-    }
-    return (res);
+	res = 1;
+	while (n > 0)
+	{
+		if (n & 1)
+			res *= a;
+		a *= a;
+		n >>= 1;
+	}
+	return (res);
 }

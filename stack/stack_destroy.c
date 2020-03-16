@@ -6,13 +6,13 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:17:51 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/27 17:17:54 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:24:15 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-inline int stack_destroy(t_stack *stack)
+inline int	stack_destroy(t_stack *stack)
 {
 	return (vector_destroy(stack));
 }

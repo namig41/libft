@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:12:53 by lcarmelo          #+#    #+#             */
-/*   Updated: 2019/09/27 16:12:58 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:28:21 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static size_t	where_start(char const *s)
 	return (start);
 }
 
-char		*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
-	char	*str;
+	char		*str;
 	size_t		end;
 	size_t		len;
 	size_t		i;

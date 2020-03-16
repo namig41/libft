@@ -1,19 +1,18 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_byte_size.c                                 :+:      :+:    :+:   */
+/*   vector_chr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 14:37:05 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/17 15:31:02 by fpythago         ###   ########.fr       */
+/*   Created: 2020/03/16 10:39:09 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/03/16 10:39:58 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-void 			*vector_chr(t_vector *vector, size_t offset, int c)
+void			*vector_chr(t_vector *vector, size_t offset, int c)
 {
 	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);

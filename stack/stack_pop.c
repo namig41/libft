@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 16:54:29 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/29 18:03:46 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:26:53 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,3 @@ inline void	*stack_pop(t_stack *stack)
 {
 	return (vector_pop_back(stack));
 }
-

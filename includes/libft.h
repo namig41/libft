@@ -3,9 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */ /*   Created: 2020/02/11 18:41:12 by fpythago          #+#    #+#             */
-/*   Updated: 2020/03/11 17:21:06 by lcarmelo         ###   ########.fr       */
+/*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/16 11:16:20 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/03/16 11:21:02 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +30,8 @@ typedef unsigned short int	t_usi;
 typedef long				t_l;
 
 /*
-** --------------------------- FUNCTIONS ------------------------------------------
-** --------------------------- MEMORY ---------------------------------------------
+** --------------------------- FUNCTIONS --------------------------------
+** --------------------------- MEMORY -----------------------------------
 */
 
 void						*ft_memset(void *b, int c, size_t len);
@@ -46,14 +47,15 @@ void						ft_memswap(void *a, void *b, size_t size);
 void						ft_swap(void **a, void **b);
 
 /*
-** --------------------------- STRINGS ---------------------------------------------
+** --------------------------- STRINGS ---------------------------------
 */
 
 size_t						ft_strlen(const char *s);
 char						*ft_strchr(const char *str, int ch);
 int							ft_strchri(const char *str, int ch);
-int 						ft_strequ(const char *s1, const char *s2);
-int 						ft_strnequ(const char *s1, const char *s2, size_t n);
+int							ft_strequ(const char *s1, const char *s2);
+int							ft_strnequ(const char *s1, const char *s2,
+										size_t n);
 char						*ft_strcat(char *dest, const char *src);
 char						*ft_strncat(char *dest, const char *src, size_t n);
 char						*ft_strjoin(const char *str1, const char *str2);
@@ -62,14 +64,15 @@ char						*ft_strncpy(char *dst, const char *src, size_t len);
 char						*ft_strdup(const char *str);
 void						ft_strclr(char *str);
 int							ft_strcmp(const char *s1, const char *s2);
-int							ft_strncmp(const char *s1, const char *s2, size_t n);
+int							ft_strncmp(const char *s1, const char *s2,
+										size_t n);
 void						ft_striter(char *s, void (*f)(char *));
-void						ft_striteri(char *s, void (*f)(unsigned int, char *));
+void						ft_striteri(char *s,
+										void (*f)(unsigned int, char *));
 char						*ft_strnew(size_t size);
 
-
-/* 
-** --------------------------- CONVERSION ---------------------------------------------
+/*
+** --------------------------- CONVERSION -----------------------------
 */
 
 int							ft_atoi(char *str);
@@ -80,41 +83,40 @@ char						*ft_ulltoa_base(t_ull value, int base, char reg);
 int							ft_tolower(int c);
 int							ft_toupper(int c);
 
-/* 
-** --------------------------- CTYPE ---------------------------------------------
+/*
+** --------------------------- CTYPE ---------------------------------
 */
 
 int							ft_isdigit(int c);
 int							ft_isprint(int c);
 int							ft_isalnum(int c);
 int							ft_isalpha(int c);
-int 						ft_isascii(int c);
-int 						ft_isescape(int c);
+int							ft_isascii(int c);
+int							ft_isescape(int c);
 
-/* 
-** --------------------------- MATH ---------------------------------------------
+/*
+** --------------------------- MATH ---------------------------------
 */
 
-int                         ft_bpow(int a, int n);
-int                         ft_abs(int num);
+int							ft_bpow(int a, int n);
+int							ft_abs(int num);
 size_t						ft_max(size_t a, size_t b);
 long						ft_max_l(long a, long b);
 size_t						ft_min(size_t a, size_t b);
 long						ft_min_l(long a, long b);
 t_ui						ft_random(t_ui rand_max);
 
-/* 
-** --------------------------- DISPLAY ---------------------------------------------
+/*
+** --------------------------- DISPLAY -----------------------------
 */
 
 void						ft_putchar_fd(char c, int fd);
 void						ft_putendl_fd(char const *s, int fd);
 void						ft_putstr_fd(char const *s, int fd);
-void 						ft_putnbr_fd(int n, int fd);
+void						ft_putnbr_fd(int n, int fd);
 void						ft_putchar(char c);
 void						ft_putendl(char const *s);
 void						ft_putstr(char const *s);
-void 						ft_putnbr(int n);
-
+void						ft_putnbr(int n);
 
 #endif

@@ -6,49 +6,44 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 18:29:22 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/02/26 18:32:45 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:06:35 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-static void ft_qsort(t_vector *vector, size_t left, size_t right)
-{
-	t_ll pivot;
-	size_t l_hold;
-	size_t r_hold;
+t_ll	g_pivot;
 
-	l_hold = left;
-	r_hold = right;
-	pivot = *(int *)vector_get_element(vector, left);
-	while (left < right)
+static void	ft_qsort(t_vector *vector, size_t l, size_t r)
+{
+	size_t	l_hold;
+	size_t	r_hold;
+
+	l_hold = l;
+	r_hold = r;
+	g_pivot = *(int *)vector_get_element(vector, l);
+	while (l < r)
 	{
-		while ((*(int *)vector_get_element(vector, right) >= pivot) && (left < right))
-			right--;
-		if (left != right)
-		{
-			vector_set_element(vector, vector_get_element(vector, right), left);
-		  	left++;
-		}
-		while ((*(int *)vector_get_element(vector, left) <= pivot) && (left < right))
-		  	left++;
-		if (left != right)
-		{
-			vector_set_element(vector, vector_get_element(vector, left), right);
-		  	right--;
-		}
+		while ((*(int *)vector_get_element(vector, r) >= g_pivot) && (l < r))
+			r--;
+		if (l != r)
+			vector_set_element(vector, vector_get_element(vector, r), l++);
+		while ((*(int *)vector_get_element(vector, l) <= g_pivot) && (l < r))
+			l++;
+		if (l != r)
+			vector_set_element(vector, vector_get_element(vector, l), r--);
 	}
-	vector_set_element(vector, (void *)&pivot, left);
-	pivot = left;
-	left = l_hold;
-	right = r_hold;
-	if (left < pivot)
-		ft_qsort(vector, left, pivot - 1);
-	if (right > pivot)
-		ft_qsort(vector, pivot + 1, right);
+	vector_set_element(vector, (void *)&pivot, l);
+	g_pivot = l;
+	l = l_hold;
+	r = r_hold;
+	if (l < g_pivot)
+		ft_qsort(vector, l, g_pivot - 1);
+	if (r > g_pivot)
+		ft_qsort(vector, g_pivot + 1, r);
 }
 
-int 	vector_qsort(t_vector *vector)
+int			vector_qsort(t_vector *vector)
 {
 	if (!vector_is_initialized(vector))
 		return (VECTOR_ERROR);
