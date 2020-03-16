@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 18:29:22 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/16 11:06:35 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/03/16 11:39:01 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_qsort(t_vector *vector, size_t l, size_t r)
 		if (l != r)
 			vector_set_element(vector, vector_get_element(vector, l), r--);
 	}
-	vector_set_element(vector, (void *)&pivot, l);
+	vector_set_element(vector, (void *)&g_pivot, l);
 	g_pivot = l;
 	l = l_hold;
 	r = r_hold;
