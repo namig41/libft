@@ -20,6 +20,7 @@ add_library(libft STATIC
 			ctype/ft_isdigit.c
 			ctype/ft_isescape.c
 			ctype/ft_isprint.c
+			ctype/ft_isnumber.c
 
 			display/ft_putchar.c
 			display/ft_putchar_fd.c

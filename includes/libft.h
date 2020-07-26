@@ -15,8 +15,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# define TRUE 1
-# define FALSE 0
 
 typedef unsigned char		t_uc;
 typedef long double			t_ld;
@@ -93,6 +91,7 @@ int							ft_isalnum(int c);
 int							ft_isalpha(int c);
 int							ft_isascii(int c);
 int							ft_isescape(int c);
+int 						ft_isnumber(const char *str, size_t len);
 
 /*
 ** --------------------------- MATH ---------------------------------
