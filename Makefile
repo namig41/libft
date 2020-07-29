@@ -126,7 +126,8 @@ FUN_DISPLAY = \
 		ft_putchar \
 		ft_putendl \
 		ft_putnbr \
-		ft_putstr
+		ft_putstr \
+		ft_puterror
 
 FUN_GNL = \
 		get_next_line

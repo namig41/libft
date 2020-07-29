@@ -68,6 +68,8 @@ void						ft_striter(char *s, void (*f)(char *));
 void						ft_striteri(char *s,
 										void (*f)(unsigned int, char *));
 char						*ft_strnew(size_t size);
+char 						*ft_strsub(char const *s, t_ui start, size_t len);
+char 						**ft_strsplit(char const *s, char c);
 
 /*
 ** --------------------------- CONVERSION -----------------------------
@@ -117,5 +119,6 @@ void						ft_putchar(char c);
 void						ft_putendl(char const *s);
 void						ft_putstr(char const *s);
 void						ft_putnbr(int n);
+void 						ft_puterror(char const *s);
 
 #endif
