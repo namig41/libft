@@ -19,7 +19,7 @@ static void		vector_inits(t_vector *v1, t_vector *v2, t_vector *v3)
 {
 	vector_init(v1, 1, sizeof(int));
 	vector_init(v2, 1, sizeof(int));
-	vector_init(v2, 1, sizeof(int));
+	vector_init(v3, 1, sizeof(int));
 }
 
 static void		vector_destroys(t_vector *v1, t_vector *v2, t_vector *v3)
@@ -59,7 +59,7 @@ int				vector_get_median(t_vector *v, size_t med)
 		g_tmp = *(int *)vector_get_element(v, 0);
 	else
 	{
-		search(v, &lows, &highs, &pivots);
+		search(v, &lows, &pivots, &highs);
 		if (med < lows.size)
 			g_tmp = vector_get_median(&lows, med);
 		else if (med < lows.size + pivots.size)

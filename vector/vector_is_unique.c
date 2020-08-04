@@ -19,8 +19,8 @@ int			vector_is_unique(t_vector *vector)
 	i = 0;
 	while (i < vector->size - 1)
 	{
-		if (*(t_ll *)vector_get_element(vector, i) ==
-				*(t_ll *)vector_get_element(vector, i + 1))
+		if (*(int *)vector_get_element(vector, i) ==
+				*(int *)vector_get_element(vector, i + 1))
 			return (0);
 		i++;
 	}

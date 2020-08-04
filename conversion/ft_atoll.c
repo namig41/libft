@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_get_maxi.c                                  :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 16:58:51 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/04 16:58:59 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 15:56:15 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/03/14 16:23:53 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "libft.h"
 
-size_t		vector_get_maxi(t_vector *vector)
+t_ll				ft_atoll(char *str)
 {
-	int	max;
-	int	tmp;
-	size_t	i;
-	size_t	max_i;
+	t_ll			max;
+	t_ll			prev;
+	int				sign;
 
-	i = 0;
-	max = INT_MIN;
-	while (i < vector->size)
+	sign = 1;
+	max = 0;
+	prev = 0;
+	while ((*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		str++;
+	if (*str == '-')
+		str -= (sign = (-1));
+	else if (*str == '+')
+		str++;
+	while ((*str >= '0') && (*str <= '9'))
 	{
-		tmp = *(int *)vector_get_element(vector, i);
-		if (max <= tmp)
-		{
-			max = tmp;
-			max_i = i;
-		}
-		i++;
+		max = max * 10 + (*str - '0');
+		str++;
 	}
-	return (max_i);
+	return (max * sign);
 }

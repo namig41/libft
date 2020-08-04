@@ -23,8 +23,8 @@ int			vector_is_sorted(t_vector *vector)
 	max_i = vector_get_maxi(vector);
 	while (i < vector->size - 1)
 	{
-		if (*(t_ll *)vector_get_element(vector, (max_i + i) % vector->size) <
-			*(t_ll *)vector_get_element(vector, (max_i + i + 1) % vector->size))
+		if (*(int *)vector_get_element(vector, (max_i + i) % vector->size) <
+			*(int *)vector_get_element(vector, (max_i + i + 1) % vector->size))
 			return (-1);
 		i++;
 	}

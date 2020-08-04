@@ -76,6 +76,7 @@ char						**ft_strsplit(char const *s, char c);
 */
 
 int							ft_atoi(char *str);
+t_ll						ft_atoll(char *str);
 char						*ft_itoa(int n);
 char						*ft_lltoa(t_ll n);
 char						*ft_uitoa_base(t_ui value, int base, char reg);
