@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   vector_get_maxi.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 16:09:25 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/04 16:09:27 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 16:58:51 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 16:58:59 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-int			ft_isnumber(const char *str, size_t len)
+size_t		vector_get_maxi(t_vector *vector)
 {
 	size_t	i;
+	size_t	max_i;
+	t_ll	max;
+	t_ll	tmp;
 
 	i = 0;
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	while (i < len && !ft_isescape(str[i]))
+	max = INT_MIN;
+	while (i < vector->size)
 	{
-		if (!ft_isdigit(str[i]))
-			return (0);
+		tmp = *(int *)vector_get_element(vector, i);
+		if (max <= tmp)
+		{
+			max = tmp;
+			max_i = i;
+		}
 		i++;
 	}
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	return ((i - len) == 0);
+	return (max_i);
 }

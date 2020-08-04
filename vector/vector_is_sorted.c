@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   vector_is_sorted.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 16:09:25 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/04 16:09:27 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 17:11:55 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 17:11:56 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-int			ft_isnumber(const char *str, size_t len)
+int			vector_is_sorted(t_vector *vector)
 {
 	size_t	i;
+	size_t	max_i;
 
+	if (vector->size < 2)
+		return (-1);
 	i = 0;
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	while (i < len && !ft_isescape(str[i]))
+	max_i = vector_get_maxi(vector);
+	while (i < vector->size - 1)
 	{
-		if (!ft_isdigit(str[i]))
-			return (0);
+		if (*(t_ll *)vector_get_element(vector, (max_i + i) % vector->size) <
+			*(t_ll *)vector_get_element(vector, (max_i + i + 1) % vector->size))
+			return (-1);
 		i++;
 	}
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	return ((i - len) == 0);
+	return (max_i);
 }

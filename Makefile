@@ -85,7 +85,11 @@ FUN_VECTOR = \
 		vector_offset \
 		vector_chr \
 		vector_memmove \
-		vector_qsort
+		vector_qsort \
+		vector_is_unique \
+		vector_get_maxi \
+		vector_is_sorted \
+		vector_get_median
 
 FUN_STACK = \
 		stack_byte_size \

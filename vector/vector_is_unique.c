@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   vector_is_unique.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 16:09:25 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/04 16:09:27 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 17:05:34 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 17:05:37 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-int			ft_isnumber(const char *str, size_t len)
+int			vector_is_unique(t_vector *vector)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	while (i < len && !ft_isescape(str[i]))
+	while (i < vector->size - 1)
 	{
-		if (!ft_isdigit(str[i]))
+		if (*(t_ll *)vector_get_element(vector, i) ==
+				*(t_ll *)vector_get_element(vector, i + 1))
 			return (0);
 		i++;
 	}
-	while (i < len && ft_isescape(str[i]))
-		i++;
-	return ((i - len) == 0);
+	return (1);
 }
