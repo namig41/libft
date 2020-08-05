@@ -14,8 +14,8 @@
 
 size_t		vector_get_maxi(t_vector *vector)
 {
-	int	max;
-	int	tmp;
+	int		max;
+	int		tmp;
 	size_t	i;
 	size_t	max_i;
 
