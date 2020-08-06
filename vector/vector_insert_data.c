@@ -18,7 +18,7 @@ int		vector_insert_data(t_vector *vector, size_t index, void *element)
 		return (VECTOR_ERROR);
 	if (vector->size == vector->capacity && !vector_reallocate(vector))
 		return (VECTOR_ERROR);
-	ft_vector_offset(vector, index, element, OFFSET_RIGHT);
+	vector_offset(vector, index, element, OFFSET_RIGHT);
 	vector->size++;
 	return (VECTOR_SUCCESS);
 }

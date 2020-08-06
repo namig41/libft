@@ -49,7 +49,7 @@ typedef struct	s_vector {
 
 /*
 ** --------------------------- FUNCTIONS --------------------------
-** --------------------------- CONSTRUCTOR ------------------------
+** --------------------------- CONSTRUCTOR -----------------------
 */
 
 int				vector_init(t_vector *vector, size_t capacity,
@@ -85,8 +85,6 @@ int				vector_insert_data(t_vector *vector, size_t index,
 
 void			*vector_get_element(t_vector *element, size_t index);
 void			*vector_chr(t_vector *vector, size_t offset, int c);
-int				vector_get_median(t_vector *v, size_t med);
-size_t			vector_get_maxi(t_vector *vector);
 
 /*
 ** --------------------------- SET ELEMENT -------------------
@@ -110,8 +108,6 @@ int				vector_destroy(t_vector *vector);
 
 int				vector_is_empty(const t_vector *vector);
 int				vector_is_initialized(const t_vector *vector);
-int				vector_is_unique(t_vector *vector);
-int				vector_is_sorted(t_vector *vector);
 size_t			vector_byte_size(const t_vector *vector);
 size_t			vector_free_size(const t_vector *vector);
 size_t			vector_byte_capacity(const t_vector *vector);
@@ -127,7 +123,7 @@ int				vector_reallocate(t_vector *vector);
 ** --------------------------- PRIVATE -------------------
 */
 
-void			ft_vector_offset(t_vector *vector, size_t index,
+void			vector_offset(t_vector *vector, size_t index,
 								void *element, t_uc offset_flag);
 /*
 ** --------------------------- ALGORITHM ----------------

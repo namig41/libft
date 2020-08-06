@@ -14,12 +14,13 @@
 
 int		vector_init(t_vector *vector, size_t capacity, size_t element_size)
 {
-	if (!vector && !vector->data)
-		return (VECTOR_ERROR);
-	vector->size = 0;
-	vector->capacity = ft_max(VECTOR_MIN_CAPACITY, capacity);
-	vector->element_size = element_size;
-	if (!(vector->data = malloc(vector_byte_capacity(vector))))
-		return (VECTOR_ERROR);
+	if (!vector->data)
+	{
+		vector->size = 0;
+		vector->capacity = ft_max(VECTOR_MIN_CAPACITY, capacity);
+		vector->element_size = element_size;
+		if (!(vector->data = malloc(vector_byte_capacity(vector))))
+			return (VECTOR_ERROR);
+	}
 	return (VECTOR_SUCCESS);
 }

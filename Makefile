@@ -12,7 +12,6 @@
 
 FUN_CONVERSION = \
         ft_atoi \
-        ft_atoll \
 		ft_itoa \
 		ft_lltoa \
 		ft_uitoa_base \
@@ -86,11 +85,7 @@ FUN_VECTOR = \
 		vector_offset \
 		vector_chr \
 		vector_memmove \
-		vector_qsort \
-		vector_is_unique \
-		vector_get_maxi \
-		vector_is_sorted \
-		vector_get_median
+		vector_qsort
 
 FUN_STACK = \
 		stack_byte_size \
@@ -121,7 +116,8 @@ FUN_CTYPE = \
 		ft_isalnum \
 		ft_isascii \
 		ft_isalpha \
-		ft_isescape
+		ft_isescape \
+		ft_isnumber
 
 FUN_DISPLAY = \
 		ft_putchar_fd \
@@ -131,8 +127,7 @@ FUN_DISPLAY = \
 		ft_putchar \
 		ft_putendl \
 		ft_putnbr \
-		ft_putstr \
-		ft_puterror
+		ft_putstr
 
 FUN_GNL = \
 		get_next_line

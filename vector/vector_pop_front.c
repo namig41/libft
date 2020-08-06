@@ -21,7 +21,7 @@ void		*vector_pop_front(t_vector *vector)
 	if (!(data = malloc(vector->element_size)))
 		return (VECTOR_ERROR);
 	ft_memcpy(data, vector->data, vector->element_size);
-	ft_vector_offset(vector, 0, NULL, OFFSET_LEFT);
+	vector_offset(vector, 0, NULL, OFFSET_LEFT);
 	vector->size--;
 	return (data);
 }

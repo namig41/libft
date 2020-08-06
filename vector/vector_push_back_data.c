@@ -18,7 +18,7 @@ int		vector_push_back_data(t_vector *vector, void *data)
 		return (VECTOR_ERROR);
 	if (vector->size == vector->capacity && !vector_reallocate(vector))
 		return (VECTOR_ERROR);
-	ft_vector_offset(vector, vector->size, data, OFFSET_NO);
+	vector_offset(vector, vector->size, data, OFFSET_NO);
 	vector->size++;
 	return (VECTOR_SUCCESS);
 }

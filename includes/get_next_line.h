@@ -12,12 +12,12 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE	1
+# define BUFF_SIZE 8
 # if BUFF_SIZE <= 0
 #  error "BUFF_SIZE has wrong size"
 # endif
 # define VEC_SIZE 4
-# define SEPARATOR '\n'
+# define SEP '\n'
 # define SUCCESS 1
 # define END_FILE 0
 # define MEM_ERR -1

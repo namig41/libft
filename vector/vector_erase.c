@@ -16,7 +16,7 @@ int		vector_erase(t_vector *vector, size_t index)
 {
 	if (!vector && vector->size < index)
 		return (VECTOR_ERROR);
-	ft_vector_offset(vector, index, 0, OFFSET_LEFT);
+	vector_offset(vector, index, 0, OFFSET_LEFT);
 	vector->size--;
 	return (VECTOR_SUCCESS);
 }
