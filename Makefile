@@ -141,7 +141,8 @@ DIR_MATH 		= ./math/
 DIR_CTYPE 		= ./ctype/
 DIR_DISP 		= ./display/
 DIR_GNL 		= ./gnl/
-DIR_INC   		= ./includes
+DIR_INC   		= ./includes/
+DIR_OBJ 		= ./obj/
 
 SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSION)))
 SRC_STRINGS     = $(addprefix $(DIR_STRINGS), $(addsuffix .c, $(FUN_STRINGS)))
@@ -169,9 +170,11 @@ $(OBJ_ALL):
 $(NAME): $(OBJ_ALL)
 	@ar rc $(NAME) $?
 	@ranlib $(NAME)
+	@mkdir -p $(DIR_OBJ)
+	@mv -un $(OBJ_ALL) $(DIR_OBJ)
 
 clean:
-	@rm -f $(OBJ_ALL)
+	@rm -rf $(DIR_OBJ)
 
 fclean: clean
 	@rm -f $(NAME)
