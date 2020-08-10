@@ -12,6 +12,7 @@
 
 FUN_CONVERSION = \
         ft_atoi \
+        ft_atoll \
 		ft_itoa \
 		ft_lltoa \
 		ft_uitoa_base \
@@ -85,7 +86,12 @@ FUN_VECTOR = \
 		vector_offset \
 		vector_chr \
 		vector_memmove \
-		vector_qsort
+		vector_qsort \
+		vector_is_unique \
+		vector_get_maxi \
+		vector_is_sorted \
+		vector_get_median
+
 
 FUN_STACK = \
 		stack_byte_size \
@@ -133,7 +139,7 @@ FUN_GNL = \
 		get_next_line
 
 FUN_GALLOC = \
-		ft_gmemalloc \
+		allocate \
 		clear_memory
 
 DIR_CONVERSION  = ./conversion/
@@ -188,7 +194,7 @@ $(NAME): $(OBJ_ALL)
 	@ar rc $(NAME) $?
 	@ranlib $(NAME)
 	@mkdir -p $(DIR_OBJ)
-	@mv -un $(OBJ_ALL) $(DIR_OBJ)
+	@mv $(OBJ_ALL) $(DIR_OBJ)
 
 clean:
 	@rm -rf $(DIR_OBJ)
@@ -200,4 +206,3 @@ re: fclean all
 
 compile: re
 	$(CC) main.c $(NAME) -I$(DIR_INC) 
-

@@ -19,7 +19,7 @@ int					get_next_line(const int fd, char **line)
 	static t_vector c;
 	char			*s;
 	char			buf[BUFF_SIZE + 1];
-	int 			g_n;
+	int				g_n;
 
 	if ((g_shift = (fd < 0 || !line)))
 		return (MEM_ERR);
@@ -38,6 +38,6 @@ int					get_next_line(const int fd, char **line)
 	if (!(*line = ft_strsub(c.data, 0, g_n)))
 		return (MEM_ERR);
 	s ? vector_memmove(&c, (void *)s, c.data + c.size - (void *)s) :
-		vector_clear(&c); 
+		vector_clear(&c);
 	return (SUCCESS);
 }

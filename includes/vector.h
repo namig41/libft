@@ -6,13 +6,14 @@
 /*   By: fpythago <fpythago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:23:50 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/16 11:33:42 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:32:47 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
 # include "libft.h"
+# include "galloc.h"
 
 /*
 ** --------------------------- DEFINITIONS  --------------------------
@@ -49,7 +50,7 @@ typedef struct	s_vector {
 
 /*
 ** --------------------------- FUNCTIONS --------------------------
-** --------------------------- CONSTRUCTOR -----------------------
+** --------------------------- CONSTRUCTOR ------------------------
 */
 
 int				vector_init(t_vector *vector, size_t capacity,
@@ -85,6 +86,8 @@ int				vector_insert_data(t_vector *vector, size_t index,
 
 void			*vector_get_element(t_vector *element, size_t index);
 void			*vector_chr(t_vector *vector, size_t offset, int c);
+int				vector_get_median(t_vector *v, size_t med);
+size_t			vector_get_maxi(t_vector *vector);
 
 /*
 ** --------------------------- SET ELEMENT -------------------
@@ -108,6 +111,8 @@ int				vector_destroy(t_vector *vector);
 
 int				vector_is_empty(const t_vector *vector);
 int				vector_is_initialized(const t_vector *vector);
+int				vector_is_unique(t_vector *vector);
+int				vector_is_sorted(t_vector *vector);
 size_t			vector_byte_size(const t_vector *vector);
 size_t			vector_free_size(const t_vector *vector);
 size_t			vector_byte_capacity(const t_vector *vector);

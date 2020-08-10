@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_memory.c                                     :+:      :+:    :+:   */
+/*   vector_is_sorted.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/10 16:43:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/10 16:43:48 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 17:11:55 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 17:11:56 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "vector.h"
 
-extern t_galloc *g_gc;
-
-void			clear_memory(void)
+int			vector_is_sorted(t_vector *vector)
 {
-	t_galloc	*d_node;
+	size_t	i;
+	size_t	max_i;
 
-	while (g_gc)
+	if (!vector || vector->size < 2)
+		return (-1);
+	i = 0;
+	max_i = vector_get_maxi(vector);
+	while (i < vector->size - 1)
 	{
-		d_node = g_gc;
-		//ft_memdel(&d_node->data);
-		ft_putstr("I AM HERE");
-		ft_memdel((void **)&d_node);
+		if (*(int *)vector_get_element(vector, (max_i + i) % vector->size) <
+			*(int *)vector_get_element(vector, (max_i + i + 1) % vector->size))
+			return (-1);
+		i++;
 	}
+	return (max_i);
 }

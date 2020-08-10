@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_memory.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/10 16:43:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/10 16:43:48 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 15:56:15 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/03/14 16:23:53 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "libft.h"
 
-extern t_galloc *g_gc;
-
-void			clear_memory(void)
+t_ll				ft_atoll(char *str)
 {
-	t_galloc	*d_node;
+	t_ll			max;
+	t_ll			prev;
+	int				sign;
 
-	while (g_gc)
+	sign = 1;
+	max = 0;
+	prev = 0;
+	while ((*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		str++;
+	if (*str == '-')
+		str -= (sign = (-1));
+	else if (*str == '+')
+		str++;
+	while ((*str >= '0') && (*str <= '9'))
 	{
-		d_node = g_gc;
-		//ft_memdel(&d_node->data);
-		ft_putstr("I AM HERE");
-		ft_memdel((void **)&d_node);
+		max = max * 10 + (*str - '0');
+		str++;
 	}
+	return (max * sign);
 }

@@ -12,9 +12,7 @@
 
 #include "vector.h"
 
-int		vector_is_empty(const t_vector *vector)
+inline int		vector_is_empty(const t_vector *vector)
 {
-	if (!vector)
-		return (VECTOR_ERROR);
-	return (!vector->size);
+	return (vector ? !vector->size : VECTOR_ERROR);
 }

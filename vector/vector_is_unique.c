@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_memory.c                                     :+:      :+:    :+:   */
+/*   vector_is_unique.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/10 16:43:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/10 16:43:48 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 17:05:34 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 17:05:37 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "vector.h"
 
-extern t_galloc *g_gc;
-
-void			clear_memory(void)
+int			vector_is_unique(t_vector *vector)
 {
-	t_galloc	*d_node;
+	size_t	i;
 
-	while (g_gc)
+	if (!vector)
+		return (VECTOR_ERROR);
+	i = 0;
+	while (i < vector->size - 1)
 	{
-		d_node = g_gc;
-		//ft_memdel(&d_node->data);
-		ft_putstr("I AM HERE");
-		ft_memdel((void **)&d_node);
+		if (*(int *)vector_get_element(vector, i) ==
+				*(int *)vector_get_element(vector, i + 1))
+			return (0);
+		i++;
 	}
+	return (1);
 }

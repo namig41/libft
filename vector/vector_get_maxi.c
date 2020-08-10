@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_memory.c                                     :+:      :+:    :+:   */
+/*   vector_get_maxi.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/10 16:43:44 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/10 16:43:48 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/08/04 16:58:51 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/08/04 16:58:59 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "vector.h"
 
-extern t_galloc *g_gc;
-
-void			clear_memory(void)
+size_t		vector_get_maxi(t_vector *vector)
 {
-	t_galloc	*d_node;
+	int		max;
+	int		tmp;
+	size_t	i;
+	size_t	max_i;
 
-	while (g_gc)
+	i = 0;
+	max = INT_MIN;
+	while (i < vector->size)
 	{
-		d_node = g_gc;
-		//ft_memdel(&d_node->data);
-		ft_putstr("I AM HERE");
-		ft_memdel((void **)&d_node);
+		tmp = *(int *)vector_get_element(vector, i);
+		if (max <= tmp)
+		{
+			max = tmp;
+			max_i = i;
+		}
+		i++;
 	}
+	return (max_i);
 }
