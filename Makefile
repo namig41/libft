@@ -132,8 +132,13 @@ FUN_DISPLAY = \
 FUN_GNL = \
 		get_next_line
 
+FUN_GALLOC = \
+		ft_gmemalloc \
+		clear_memory
+
 DIR_CONVERSION  = ./conversion/
 DIR_MEMORY      = ./memory/
+DIR_GALLOC		= ./galloc/
 DIR_STRINGS     = ./strings/
 DIR_VECTOR 		= ./vector/
 DIR_STACK 		= ./stack/
@@ -146,6 +151,7 @@ DIR_OBJ 		= ./obj/
 
 SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSION)))
 SRC_STRINGS     = $(addprefix $(DIR_STRINGS), $(addsuffix .c, $(FUN_STRINGS)))
+SRC_GALLOC		= $(addprefix $(DIR_GALLOC), $(addsuffix .c, $(FUN_GALLOC)))
 SRC_MEMORY      = $(addprefix $(DIR_MEMORY), $(addsuffix .c, $(FUN_MEMORY)))
 SRC_VECTOR 		= $(addprefix $(DIR_VECTOR), $(addsuffix .c, $(FUN_VECTOR)))
 SRC_STACK 		= $(addprefix $(DIR_STACK), $(addsuffix .c, $(FUN_STACK)))
@@ -154,8 +160,19 @@ SRC_CTYPE 		= $(addprefix $(DIR_CTYPE), $(addsuffix .c, $(FUN_CTYPE)))
 SRC_MATH 		= $(addprefix $(DIR_MATH), $(addsuffix .c, $(FUN_MATH)))
 SRC_GNL 		= $(addprefix $(DIR_GNL), $(addsuffix .c, $(FUN_GNL)))
 
-SRC_ALL         = $(SRC_CONVERSION) $(SRC_MEMORY) $(SRC_STRINGS) $(SRC_VECTOR) $(SRC_STACK) $(SRC_MATH) $(SRC_CTYPE) $(SRC_DIPLAY) $(SRC_GNL)
-OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
+SRC_ALL         = \
+					$(SRC_CONVERSION) \
+					$(SRC_GALLOC) \
+					$(SRC_MEMORY) \
+					$(SRC_STRINGS) \
+					$(SRC_VECTOR) \
+					$(SRC_STACK) \
+					$(SRC_MATH) \
+					$(SRC_CTYPE) \
+					$(SRC_DIPLAY) \
+					$(SRC_GNL)
+
+OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_GALLOC) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
 
 CC              = gcc
 NAME            = libft.a
