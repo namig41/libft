@@ -54,7 +54,7 @@ int				vector_get_median(t_vector *v, size_t med)
 	t_vector	lows;
 	t_vector	pivots;
 	t_vector	highs;
-	
+
 	lows.data = NULL;
 	pivots.data = NULL;
 	highs.data = NULL;
