@@ -10,46 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "gc.h"
 
-t_galloc *g_gc = NULL;
-
-inline static void	node_front(t_galloc *node)
+inline void			*gc_get_ptr_list(void)
 {
-	node->next = g_gc;
-	g_gc = node;
+	static void		*gc_list = NULL;
+	return (&gc_list);
 }
 
-void				*ft_gmemalloc(size_t size)
+void				*gc_alloc(size_t size)
 {
-	void			*data;
-	t_galloc		*node;
+    void 			**gc_list;
+    void 			*ptr;
 
-	if (!(data = ft_memalloc(size)))
+	gc_list = gc_get_ptr_list();
+	if (!(ptr = malloc(sizeof(void *) + size)))
 		return (NULL);
-	if (!(node = ft_memalloc(sizeof(t_galloc))))
-	{
-		ft_memdel((void **)&data);
-		return (NULL);
-	}
-	node->data = data;
-	node_front(node);
-	return (data);
+    (*((void **)ptr)) = (*gc_list);
+    (*gc_list) = ptr;
+    return (ptr + sizeof(void *));
 }
 
-void				*ft_galloc(size_t size)
+void				*gc_calloc(size_t size)
 {
-	void			*data;
-	t_galloc		*node;
+	void *ptr;
 
-	if (!(data = malloc(size)))
+	if (!(ptr = gc_alloc(size)))
 		return (NULL);
-	if (!(node = ft_memalloc(sizeof(t_galloc))))
-	{
-		ft_memdel((void **)&data);
-		return (NULL);
-	}
-	node->data = data;
-	node_front(node);
-	return (data);
+	ft_bzero(ptr, size);
+	return (ptr);
 }

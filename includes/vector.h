@@ -13,7 +13,7 @@
 #ifndef VECTOR_H
 # define VECTOR_H
 # include "libft.h"
-# include "galloc.h"
+# include "gc.h"
 
 /*
 ** --------------------------- DEFINITIONS  --------------------------

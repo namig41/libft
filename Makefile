@@ -138,63 +138,103 @@ FUN_DISPLAY = \
 FUN_GNL = \
 		get_next_line
 
-FUN_GALLOC = \
-		allocate \
-		clear_memory
+FUN_GC = \
+		gc \
+		gc_free
+
+HEADERS = \
+		gc \
+		get_next_line \
+		libft \
+		stack \
+		vector
 
 DIR_CONVERSION  = ./conversion/
 DIR_MEMORY      = ./memory/
-DIR_GALLOC		= ./galloc/
 DIR_STRINGS     = ./strings/
 DIR_VECTOR 		= ./vector/
 DIR_STACK 		= ./stack/
 DIR_MATH 		= ./math/
 DIR_CTYPE 		= ./ctype/
-DIR_DISP 		= ./display/
+DIR_DISPLAY 	= ./display/
 DIR_GNL 		= ./gnl/
+DIR_GC			= ./gc/
+
 DIR_INC   		= ./includes/
+INC				= $(addsuffix .h, $(HEADERS))
+INC_ALL			= $(addprefix $(DIR_INC), $(INC))
+
 DIR_OBJ 		= ./obj/
 
 SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSION)))
 SRC_STRINGS     = $(addprefix $(DIR_STRINGS), $(addsuffix .c, $(FUN_STRINGS)))
-SRC_GALLOC		= $(addprefix $(DIR_GALLOC), $(addsuffix .c, $(FUN_GALLOC)))
 SRC_MEMORY      = $(addprefix $(DIR_MEMORY), $(addsuffix .c, $(FUN_MEMORY)))
 SRC_VECTOR 		= $(addprefix $(DIR_VECTOR), $(addsuffix .c, $(FUN_VECTOR)))
 SRC_STACK 		= $(addprefix $(DIR_STACK), $(addsuffix .c, $(FUN_STACK)))
-SRC_DIPLAY		= $(addprefix $(DIR_DISP), $(addsuffix .c, $(FUN_DISPLAY)))
+SRC_DISPLAY		= $(addprefix $(DIR_DISP), $(addsuffix .c, $(FUN_DISPLAY)))
 SRC_CTYPE 		= $(addprefix $(DIR_CTYPE), $(addsuffix .c, $(FUN_CTYPE)))
 SRC_MATH 		= $(addprefix $(DIR_MATH), $(addsuffix .c, $(FUN_MATH)))
 SRC_GNL 		= $(addprefix $(DIR_GNL), $(addsuffix .c, $(FUN_GNL)))
+SRC_GC 			= $(addprefix $(DIR_GC), $(addsuffix .c, $(FUN_GC)))
 
 SRC_ALL         = \
 					$(SRC_CONVERSION) \
-					$(SRC_GALLOC) \
 					$(SRC_MEMORY) \
 					$(SRC_STRINGS) \
 					$(SRC_VECTOR) \
 					$(SRC_STACK) \
 					$(SRC_MATH) \
 					$(SRC_CTYPE) \
-					$(SRC_DIPLAY) \
-					$(SRC_GNL)
+					$(SRC_DISPLAY) \
+					$(SRC_GNL) \
+					$(SRC_GC)
 
-OBJ_ALL         = $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_GALLOC) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL))
+OBJ_ALL         = $(addprefix $(DIR_OBJ), $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_GC) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL)))
+
 
 CC              = gcc
 NAME            = libft.a
 #CFLAGS          = -Wall -Werror -Wextra -O2 -I$(DIR_INC)
-CFLAGS          = -g -O2 -I$(DIR_INC)
+CFLAGS          = -g -c -O2 -I$(DIR_INC)
 
 all: $(NAME)
 
-$(OBJ_ALL):
-	@$(CC) -c $(CFLAGS) $(SRC_ALL) 
-
-$(NAME): $(OBJ_ALL)
-	@ar rc $(NAME) $?
+$(NAME): $(DIR_OBJ) $(OBJ_ALL)
+	@ar rc $(NAME) $(OBJ_ALL)
 	@ranlib $(NAME)
+
+$(DIR_OBJ):
 	@mkdir -p $(DIR_OBJ)
-	@mv $(OBJ_ALL) $(DIR_OBJ)
+
+$(DIR_OBJ)%.o : $(DIR_CONVERSION)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_MEMORY)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_STRINGS)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_VECTOR)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_STACK)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_MATH)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_CTYPE)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_DISPLAY)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_GNL)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_GC)%.c
+	@$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	@rm -rf $(DIR_OBJ)

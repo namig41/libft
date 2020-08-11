@@ -12,14 +12,13 @@
 
 #include "get_next_line.h"
 
-int	g_shift;
-
 int					get_next_line(const int fd, char **line)
 {
-	static t_vector c;
 	char			*s;
 	char			buf[BUFF_SIZE + 1];
 	int				g_n;
+	int				g_shift;
+	static t_vector c;
 
 	if ((g_shift = (fd < 0 || !line)))
 		return (MEM_ERR);

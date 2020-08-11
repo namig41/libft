@@ -10,19 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "galloc.h"
+#include "gc.h"
 
-extern t_galloc *g_gc;
-
-void			clear_memory(void)
+void __attribute__ ((destructor)) gc_free(void)
 {
-	t_galloc	*d_node;
+    void *ptr_list;
+    void *ptr;
 
-	while (g_gc)
-	{
-		d_node = g_gc;
-		//ft_memdel(&d_node->data);
-		ft_putstr("I AM HERE");
-		ft_memdel((void **)&d_node);
-	}
+	ptr_list  = (*((void **)gc_get_ptr_list())); 
+    while ((ptr = ptr_list))
+    {
+        ptr_list = (*((void **)ptr_list));
+        ft_memdel(&ptr);
+    }
 }
