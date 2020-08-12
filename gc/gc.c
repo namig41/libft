@@ -14,9 +14,8 @@
 
 inline void		*gc_get_ptr_list(void)
 {
-	static void	*gc_list;
+	static void	*gc_list = {0};
 
-	gc_list = NULL;
 	return (&gc_list);
 }
 

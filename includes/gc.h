@@ -18,18 +18,19 @@
 ** --------------------------- INTERFACE -------------------------------------
 */
 
-void				*gc_get_ptr_list(void);
+void			*gc_get_ptr_list(void);
 
 /*
 ** --------------------------- ALLOCATE MEMORY -------------------------------
 */
-void				*gc_alloc(size_t size);
-void				*gc_calloc(size_t size);
+
+void			*gc_alloc(size_t size);
+void			*gc_calloc(size_t size);
 
 /*
 ** --------------------------- CLEAN MEMORY ---------------------------------
 */
 
-void				gc_free(void);
+void			gc_free(void);
 
 #endif
