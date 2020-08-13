@@ -34,7 +34,7 @@ int					get_next_line(const int fd, char **line)
 	if (vector_is_empty(&c) && vector_destroy(&c))
 		return (g_n < 0 ? MEM_ERR : END_FILE);
 	g_n = s ? (s++ - (char *)c.data) : c.size;
-	if (!(*line = gc_strsub(c.data, 0, g_n)))
+	if (!(*line = ft_strsub(c.data, 0, g_n)))
 		return (MEM_ERR);
 	s ? vector_memmove(&c, (void *)s, c.data + c.size - (void *)s) :
 		vector_clear(&c);
