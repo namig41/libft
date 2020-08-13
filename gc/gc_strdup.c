@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_free.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/11 13:55:38 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/11 13:55:39 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:09:17 by lcarmelo          #+#    #+#             */
+/*   Updated: 2019/09/27 16:09:18 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void		gc_free(void)
+char	*gc_strdup(const char *str)
 {
-	void	*ptr_list;
-	void	*ptr;
+	char	*copy;
+	size_t	ssize;
 
-	ptr_list = (*((void **)gc_get_ptr_list()));
-	while ((ptr = ptr_list))
-	{
-		ptr_list = (*((void **)ptr_list));
-		ft_memdel(&ptr);
-	}
+	ssize = ft_strlen(str) + 1;
+	if (!(copy = gc_alloc(ssize)))
+		return (NULL);
+	ft_memcpy(copy, str, ssize);
+	return (copy);
 }

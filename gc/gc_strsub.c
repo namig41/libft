@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_free.c                                          :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/11 13:55:38 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/08/11 13:55:39 by lcarmelo         ###   ########.fr       */
+/*   Created: 2019/09/27 16:12:40 by lcarmelo          #+#    #+#             */
+/*   Updated: 2019/09/27 16:12:42 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void		gc_free(void)
+char	*gc_strsub(char const *s, t_ui start, size_t len)
 {
-	void	*ptr_list;
-	void	*ptr;
+	char *sub_s;
 
-	ptr_list = (*((void **)gc_get_ptr_list()));
-	while ((ptr = ptr_list))
-	{
-		ptr_list = (*((void **)ptr_list));
-		ft_memdel(&ptr);
-	}
+	if (!s)
+		return (NULL);
+	if (!(sub_s = (char *)gc_alloc(len + 1)))
+		return (NULL);
+	ft_strncpy(sub_s, s + start, len);
+	return (sub_s);
 }

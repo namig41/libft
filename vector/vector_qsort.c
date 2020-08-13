@@ -37,9 +37,9 @@ static void	ft_qsort(t_vector *vector, size_t l, size_t r)
 	g_pivot = l;
 	l = l_hold;
 	r = r_hold;
-	if (l < g_pivot)
+	if ((t_ll)l < g_pivot)
 		ft_qsort(vector, l, g_pivot - 1);
-	if (r > g_pivot)
+	if ((t_ll)r > g_pivot)
 		ft_qsort(vector, g_pivot + 1, r);
 }
 

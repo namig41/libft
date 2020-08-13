@@ -1,6 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    # #    Makefile                                           :+:      :+:    :+:    #
+#                                                         :::      ::::::::    # 
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -139,7 +140,12 @@ FUN_GNL = \
 
 FUN_GC = \
 		gc \
-		gc_free
+		gc_free \
+		gc_strsub \
+		gc_strjoin \
+		gc_strnew \
+		gc_strsplit \
+		gc_strdup
 
 HEADERS = \
 		gc \
