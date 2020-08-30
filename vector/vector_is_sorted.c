@@ -17,7 +17,7 @@ int			vector_is_sorted(t_vector *vector)
 	size_t	i;
 	size_t	max_i;
 
-	if (!vector || vector->size < 2)
+	if (vector_is_empty(vector))
 		return (-1);
 	i = 0;
 	max_i = vector_get_maxi(vector);
