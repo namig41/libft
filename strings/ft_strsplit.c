@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:12:28 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/14 19:19:45 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/09/02 13:47:11 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,3 @@ char			**ft_strsplit(char const *s, char c)
 	free(line);
 	return (words);
 }
-
