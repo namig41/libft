@@ -70,6 +70,7 @@ void						ft_striteri(char *s,
 char						*ft_strnew(size_t size);
 char						*ft_strsub(char const *s, t_ui start, size_t len);
 char						**ft_strsplit(char const *s, char c);
+void 						ft_strsplit_clear(char **s);
 
 /*
 ** --------------------------- CONVERSION -----------------------------

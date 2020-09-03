@@ -56,7 +56,8 @@ FUN_STRINGS = \
 		ft_strnstr \
 		ft_strsplit \
 		ft_strsub \
-		ft_strtrim
+		ft_strtrim \
+		ft_strsplit_clear
 
 FUN_VECTOR = \
 		vector_init \
