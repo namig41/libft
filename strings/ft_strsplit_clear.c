@@ -8,6 +8,6 @@ void 	ft_strsplit_clear(char **s)
 	if (!s)
 		return ;
 	while (s[i])
-		ft_memdel((void **)&s[i]);
+		ft_memdel((void **)&s[i++]);
 	ft_memdel((void **)&s);
 }
