@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:12:28 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/09/02 13:47:11 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/09/05 17:41:04 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char		*ft_get_word(char *word, char c)
 static void		ft_free_words(char **words, size_t i)
 {
 	while (i--)
-		ft_memdel(&(words[i]));
+		ft_memdel((void **)&(words[i]));
 	free(*words);
 }
 
