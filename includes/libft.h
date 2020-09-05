@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 11:16:20 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/03/16 11:21:02 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/09/05 18:30:31 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void						ft_striteri(char *s,
 char						*ft_strnew(size_t size);
 char						*ft_strsub(char const *s, t_ui start, size_t len);
 char						**ft_strsplit(char const *s, char c);
-void 						ft_strsplit_clear(char **s);
+void						ft_strsplit_clear(char **s);
 
 /*
 ** --------------------------- CONVERSION -----------------------------
