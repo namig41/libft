@@ -30,6 +30,7 @@ add_library(libft STATIC
 			display/ft_putnbr_fd.c
 			display/ft_putstr.c
 			display/ft_putstr_fd.c
+			display/ft_puterror.c
 
 			gnl/get_next_line.c
 
