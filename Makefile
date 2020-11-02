@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    # 
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/02/26 15:25:35 by lcarmelo          #+#    #+#              #
-#    Updated: 2020/03/14 19:35:52 by lcarmelo         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 FUN_CONVERSION = \
         ft_atoi \
         ft_atoll \
@@ -58,6 +46,14 @@ FUN_STRINGS = \
 		ft_strsub \
 		ft_strtrim \
 		ft_strsplit_clear
+
+FUN_LIST = \
+		ft_lstadd \
+		ft_lstdel \
+		ft_lstdelone \
+		ft_lstiter \
+		ft_lstmap \
+		ft_lstswap
 
 FUN_VECTOR = \
 		vector_init \

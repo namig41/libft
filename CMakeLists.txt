@@ -78,6 +78,13 @@ add_library(libft STATIC
 			strings/ft_strstr.c
 			strings/ft_strsub.c
 			strings/ft_strtrim.c
+			
+			list/ft_lstadd.c
+			list/ft_lstdel.c
+			list/ft_lstdelone.c
+			list/ft_lstiter.c
+			list/ft_lstmap.c
+			list/ft_lstswap.c
 
 			vector/vector_byte_capacity.c
 			vector/vector_byte_size.c
