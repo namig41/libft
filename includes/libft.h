@@ -6,7 +6,7 @@
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 11:16:20 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/09/05 18:30:31 by lcarmelo         ###   ########.fr       */
+/*   Updated: 2020/11/26 14:38:39 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,6 @@ void						ft_putchar(char c);
 void						ft_putendl(char const *s);
 void						ft_putstr(char const *s);
 void						ft_putnbr(int n);
-void 						ft_puterror(char const *s);
+void						fft_puterror(char const *s);
 
 #endif
