@@ -21,6 +21,7 @@ size_t		vector_get_maxi(t_vector *vector)
 
 	i = 0;
 	max = INT_MIN;
+	max_i = 0;
 	while (i < vector->size)
 	{
 		tmp = *(int *)vector_get_element(vector, i);
