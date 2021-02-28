@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_bpow(int a, int n)
+t_ll		ft_bpow(t_ll a, t_ll n)
 {
-	int	res;
+	t_ll	res;
 
 	res = 1;
 	while (n > 0)

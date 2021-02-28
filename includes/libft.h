@@ -102,7 +102,7 @@ int							ft_isnumber(const char *str, size_t len);
 ** --------------------------- MATH ---------------------------------
 */
 
-int							ft_bpow(int a, int n);
+t_ll						ft_bpow(t_ll a, t_ll n);
 int							ft_abs(int num);
 size_t						ft_max(size_t a, size_t b);
 long						ft_max_l(long a, long b);
