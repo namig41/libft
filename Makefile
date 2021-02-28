@@ -1,5 +1,6 @@
 FUN_CONVERSION = \
         ft_atoi \
+		ft_atof \
         ft_atoll \
 		ft_itoa \
 		ft_lltoa \

@@ -77,6 +77,7 @@ void						ft_strsplit_clear(char **s);
 */
 
 int							ft_atoi(char *str);
+double 						ft_atof(char *str);
 t_ll						ft_atoll(char *str);
 char						*ft_itoa(int n);
 char						*ft_lltoa(t_ll n);
