@@ -49,12 +49,10 @@ FUN_STRINGS = \
 		ft_strsplit_clear
 
 FUN_LIST = \
-		ft_lstadd \
-		ft_lstdel \
-		ft_lstdelone \
-		ft_lstiter \
-		ft_lstmap \
-		ft_lstswap
+		list_push_back \
+		list_push_front \
+		list_erase \
+		list_destroy \
 
 FUN_VECTOR = \
 		vector_init \

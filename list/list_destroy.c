@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstswap.c                                       :+:      :+:    :+:   */
+/*   list_destoy.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 14:40:25 by lcarmelo          #+#    #+#             */
-/*   Updated: 2020/11/26 14:40:51 by lcarmelo         ###   ########.fr       */
+/*   Created: 2020/11/26 14:43:38 by lcarmelo          #+#    #+#             */
+/*   Updated: 2020/11/26 14:48:50 by lcarmelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
 
-t_list		*ft_lstswap(t_list *lst1, t_list *lst2)
+void	list_destoy(t_list **list, void *data);
 {
-	lst1->next = lst2->next;
-	lst2->next = lst1;
-	return (lst2);
+	t_list *tmp;
+
+	if (list && data)
+	{
+		while (*list)
+		{
+			tmp = *list;
+			*list = (*list)->next;
+			ft_memdel(&list->data);
+			ft_memdel((void **)&tmp);
+		}
+	}
 }
+
