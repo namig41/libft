@@ -12,7 +12,7 @@
 
 #include "list.h"
 
-void	list_push_back(t_list **list, void *data);
+void	list_push_back(t_list **list, void *data, size_t size)
 {
 	t_list *tmp;
 
@@ -23,13 +23,12 @@ void	list_push_back(t_list **list, void *data);
 			tmp = *list;
 			while (tmp->next)
 				tmp = tmp->next;
-			tmp->next = (t_list *)malloc(sizeof(t_list));
-			tmp->next->data = data;
+			tmp->next = list_create_node(data, size);
+
 		}
 		else
 		{
-			*list = (t_list *)malloc(sizeof(t_list));
-			(*list)->data = data;
+			*list = list_create_node(data, size);
 		}
 	}
 }

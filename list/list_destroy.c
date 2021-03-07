@@ -12,17 +12,17 @@
 
 #include "list.h"
 
-void	list_destoy(t_list **list, void *data);
+void	list_destoy(t_list **list)
 {
 	t_list *tmp;
 
-	if (list && data)
+	if (list)
 	{
 		while (*list)
 		{
 			tmp = *list;
 			*list = (*list)->next;
-			ft_memdel(&list->data);
+			ft_memdel(&tmp->data);
 			ft_memdel((void **)&tmp);
 		}
 	}

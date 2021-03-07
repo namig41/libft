@@ -49,10 +49,11 @@ FUN_STRINGS = \
 		ft_strsplit_clear
 
 FUN_LIST = \
+		list_create_node \
 		list_push_back \
 		list_push_front \
 		list_erase \
-		list_destroy \
+		list_destroy
 
 FUN_VECTOR = \
 		vector_init \
@@ -149,13 +150,15 @@ HEADERS = \
 		get_next_line \
 		libft \
 		stack \
-		vector
+		vector \
+		list
 
 DIR_CONVERSION  = ./conversion/
 DIR_MEMORY      = ./memory/
 DIR_STRINGS     = ./strings/
 DIR_VECTOR 		= ./vector/
 DIR_STACK 		= ./stack/
+DIR_LIST 		= ./list/
 DIR_MATH 		= ./math/
 DIR_CTYPE 		= ./ctype/
 DIR_DISPLAY 	= ./display/
@@ -172,6 +175,7 @@ SRC_CONVERSION  = $(addprefix $(DIR_CONVERSION), $(addsuffix .c, $(FUN_CONVERSIO
 SRC_STRINGS     = $(addprefix $(DIR_STRINGS), $(addsuffix .c, $(FUN_STRINGS)))
 SRC_MEMORY      = $(addprefix $(DIR_MEMORY), $(addsuffix .c, $(FUN_MEMORY)))
 SRC_VECTOR 		= $(addprefix $(DIR_VECTOR), $(addsuffix .c, $(FUN_VECTOR)))
+SRC_LIST 		= $(addprefix $(DIR_LIST), $(addsuffix .c, $(FUN_LIST)))
 SRC_STACK 		= $(addprefix $(DIR_STACK), $(addsuffix .c, $(FUN_STACK)))
 SRC_DISPLAY		= $(addprefix $(DIR_DISP), $(addsuffix .c, $(FUN_DISPLAY)))
 SRC_CTYPE 		= $(addprefix $(DIR_CTYPE), $(addsuffix .c, $(FUN_CTYPE)))
@@ -185,14 +189,27 @@ SRC_ALL         = \
 					$(SRC_STRINGS) \
 					$(SRC_VECTOR) \
 					$(SRC_STACK) \
+					$(SRC_LIST) \
 					$(SRC_MATH) \
 					$(SRC_CTYPE) \
 					$(SRC_DISPLAY) \
 					$(SRC_GNL) \
 					$(SRC_GC)
 
-OBJ_ALL         = $(addprefix $(DIR_OBJ), $(addsuffix .o, $(FUN_CONVERSION) $(FUN_MEMORY) $(FUN_GC) $(FUN_STRINGS) $(FUN_VECTOR) $(FUN_STACK) $(FUN_MATH) $(FUN_CTYPE) $(FUN_DISPLAY) $(FUN_GNL)))
+FUN_ALL         = \
+					$(FUN_CONVERSION) \
+					$(FUN_MEMORY) \
+					$(FUN_GC) \
+					$(FUN_STRINGS) \
+					$(FUN_LIST) \
+					$(FUN_VECTOR) \
+					$(FUN_STACK) \
+					$(FUN_MATH) \
+					$(FUN_CTYPE) \
+					$(FUN_DISPLAY) \
+					$(FUN_GNL)
 
+OBJ_ALL         = $(addprefix $(DIR_OBJ), $(addsuffix .o, $(FUN_ALL)))
 
 CC              = gcc
 NAME            = libft.a
@@ -218,6 +235,9 @@ $(DIR_OBJ)%.o : $(DIR_STRINGS)%.c
 	@$(CC) $(CFLAGS) $< -o $@
 
 $(DIR_OBJ)%.o : $(DIR_VECTOR)%.c
+	@$(CC) $(CFLAGS) $< -o $@
+
+$(DIR_OBJ)%.o : $(DIR_LIST)%.c
 	@$(CC) $(CFLAGS) $< -o $@
 
 $(DIR_OBJ)%.o : $(DIR_STACK)%.c

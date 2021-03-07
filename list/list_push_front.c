@@ -12,15 +12,14 @@
 
 #include "list.h"
 
-void	list_push_back(t_list **list, void *data);
+void	list_push_back(t_list **list, void *data, size_t size)
 {
 	t_list *tmp;
 
 	if (list && data)
 	{
-		if (!(tmp = (t_list *)malloc(sizeof(t_list))))
+		if (!(tmp = list_create_node(data, size)))
 			return ;
-		tmp->data = data;
 		tmp->next = *list;
 		*list = tmp;
 	}

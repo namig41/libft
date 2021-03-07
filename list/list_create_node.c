@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_erase.h                                       :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,31 +12,18 @@
 
 #include "list.h"
 
-void	list_erase(t_list **list, void *data)
+t_list 		*list_create_node(void *data, size_t size)
 {
-	t_list *cur_node;
-	t_list *prev_node;
+	t_list 	*node;
 
-	if (list && data)
+	if (!(node = (t_list *)ft_memalloc(sizeof(t_list))))
+		return (NULL);
+	if (!(node->data = malloc(size)))
 	{
-		if (*list)
-		{
-			prev_node = NULL;
-			cur_node = *list;
-			while (cur_node->next)
-			{
-				if (ft_memcmp(cur_node->data, data, cur_node->size))
-				{
-					if (prev_node)
-						prev_node->next = cur_node->next;	
-					ft_memdel(&cur_node->data);
-					ft_memdel((void **)&cur_node);
-					return ;
-				}
-				prev_node = cur_node;
-				cur_node = cur_node->next;
-			}
-		}
+		ft_memdel((void **)&node);	
+		return (NULL);
 	}
+	node->size = size;
+	ft_memcpy(node->data, data, size);
+	return (node);
 }
-
