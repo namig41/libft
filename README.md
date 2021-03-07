@@ -151,7 +151,7 @@
 * [stack_top](/stack/stack_top.c)
 * [stack_second](/stack/stack_second.c)
 
-## List function
+## List functions
 * [list](/includes/list.h)
 * [list_push_front](/list/list_push_front.c)
 * [list_erase](/list/list_erase.c)
