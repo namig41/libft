@@ -27,9 +27,7 @@ void	list_push_back(t_list **list, void *data, size_t size)
 
 		}
 		else
-		{
 			*list = list_create_node(data, size);
-		}
 	}
 }
 

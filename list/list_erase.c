@@ -23,7 +23,7 @@ void	list_erase(t_list **list, void *data)
 		{
 			prev_node = NULL;
 			cur_node = *list;
-			while (cur_node->next)
+			while (cur_node)
 			{
 				if (!ft_memcmp(cur_node->data, data, cur_node->size))
 				{
