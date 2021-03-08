@@ -12,7 +12,7 @@
 
 #include "list.h"
 
-void	list_push_back(t_list **list, void *data, size_t size)
+void	list_push_front(t_list **list, void *data, size_t size)
 {
 	t_list *tmp;
 
