@@ -25,10 +25,12 @@ void	list_erase(t_list **list, void *data)
 			cur_node = *list;
 			while (cur_node->next)
 			{
-				if (ft_memcmp(cur_node->data, data, cur_node->size))
+				if (!ft_memcmp(cur_node->data, data, cur_node->size))
 				{
 					if (prev_node)
 						prev_node->next = cur_node->next;	
+					else
+						*list = (*list)->next;
 					ft_memdel(&cur_node->data);
 					ft_memdel((void **)&cur_node);
 					return ;
