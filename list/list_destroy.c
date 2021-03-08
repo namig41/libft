@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_destoy.h                                      :+:      :+:    :+:   */
+/*   list_destroy.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarmelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "list.h"
 
-void	list_destoy(t_list **list)
+void	list_destroy(t_list **list)
 {
 	t_list *tmp;
 
