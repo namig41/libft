@@ -18,6 +18,7 @@ FUN_MEMORY = \
         ft_memchr \
         ft_memalloc \
         ft_memdel \
+		ft_memcmp \
 		ft_memswap \
 		ft_swap
 
